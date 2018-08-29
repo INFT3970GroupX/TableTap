@@ -11,7 +11,20 @@ namespace TableTap.UL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            /* session will make differt options show up on the nav bar ---- need to add admin
+            if ((string)Session["loggedUser"] == "user")
+            {
+                loginNav.Visible = false;
+                logoutNav.Visible = true; 
+                accountNav.Visible = true; 
+            }
+            else
+            {
+                loginNav.Visible = true;
+                logoutNav.Visible = false;
+                accountNav.Visible = false;
+            }
+            */
         }
     }
 }
