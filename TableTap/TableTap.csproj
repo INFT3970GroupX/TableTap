@@ -208,7 +208,7 @@
     <Compile Include="UL\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="utility.cs" />
+    <Compile Include="DatabaseConnection.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

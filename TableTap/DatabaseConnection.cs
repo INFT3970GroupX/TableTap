@@ -19,7 +19,7 @@ namespace TableTap
 
             //Util-3 Look for the name in the connectionStrings section.  
             ConnectionStringSettings settings =
-            ConfigurationManager.ConnectionStrings["SimpleDataApp.Properties.Settings.connString"];
+            ConfigurationManager.ConnectionStrings["TableTap.Properties.Settings.connString"];
 
             //If found, return the connection string.  
             if (settings != null)
