@@ -77,6 +77,7 @@
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="UL\Account.aspx" />
+    <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Home.aspx" />
     <Content Include="UL\Login.aspx" />
     <Content Include="UL\Logout.aspx" />
@@ -153,8 +154,10 @@
     <Compile Include="BusinessLayer\Classes\TableManager.cs" />
     <Compile Include="BusinessLayer\Classes\Table.cs" />
     <Compile Include="BusinessLayer\Classes\User.cs" />
+    <Compile Include="BusinessLayer\Classes\UserBLbeau.cs" />
     <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
+    <Compile Include="DataAccessLayer\Classes\UserDALbeau.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +172,13 @@
     </Compile>
     <Compile Include="UL\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\BeauTestPage.aspx.cs">
+      <DependentUpon>BeauTestPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\BeauTestPage.aspx.designer.cs">
+      <DependentUpon>BeauTestPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
