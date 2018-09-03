@@ -18,6 +18,8 @@ namespace TableTap.BusinessLayer.Classes
 
         public string UserPasscode { get; set; }
 
+        public byte AdminPermssion { get; set; }
+
         public void AddUser()
         {
             UserDAL obj = new UserDAL();

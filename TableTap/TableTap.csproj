@@ -150,7 +150,10 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Classes\TableManager.cs" />
+    <Compile Include="BusinessLayer\Classes\Table.cs" />
     <Compile Include="BusinessLayer\Classes\User.cs" />
+    <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
