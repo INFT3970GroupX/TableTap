@@ -21,12 +21,13 @@ namespace TableTap.UL
         protected void TestButton_Click(object sender, EventArgs e)
         {
 
-            //List<UserModel> user = new List<UserModel>();
+            UserModel user = new UserModel();
 
             int id = 1;
+            user = UserBL.getUserByID(id);
+            txtbxUserID.Text = user.UserID.ToString();
 
-            txtbxUserID.Text = UserBL.getUserByID(id).UserID.ToString();
-
+            
 
 
 

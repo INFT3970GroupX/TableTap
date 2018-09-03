@@ -50,7 +50,7 @@ namespace TableTap.DataAccessLayer
         {
             UserModel user = new UserModel();
 
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["TableTap.Properties.Settings.connString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["udbTapleTapConnectionString"].ConnectionString);
 
             using (conn)
             {
