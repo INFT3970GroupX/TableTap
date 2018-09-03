@@ -12,7 +12,7 @@ namespace TableTap.UL
     public partial class BeauTestPage : System.Web.UI.Page
     {
 
-        List<UserModel> users = new List<UserModel>();
+        //List<UserModel> users = new List<UserModel>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,9 +20,17 @@ namespace TableTap.UL
         }
         protected void TestButton_Click(object sender, EventArgs e)
         {
-            users = UserBL.FillUsersList();
 
-            
+            //List<UserModel> user = new List<UserModel>();
+
+            int id = 1;
+
+            txtbxUserID.Text = UserBL.getUserByID(id).UserID.ToString();
+
+
+
+
+
         }
     }
 }

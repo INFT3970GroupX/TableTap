@@ -18,5 +18,14 @@ namespace TableTap.BusinessLayer
             return users;
         }
 
+        public static UserModel getUserByID(int id)
+        {
+            UserModel user = UserDAL.loadUserByID(id);
+
+            return user;
+        }
+
+   
+
     }
 }
