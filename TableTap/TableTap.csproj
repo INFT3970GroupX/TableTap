@@ -150,6 +150,8 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Classes\User.cs" />
+    <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,9 +232,7 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BusinessLayer\Classes\" />
     <Folder Include="CSS\" />
-    <Folder Include="DataAccessLayer\Classes\" />
     <Folder Include="Images\" />
     <Folder Include="TestQR\" />
     <Folder Include="View\" />
