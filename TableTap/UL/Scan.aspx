@@ -5,6 +5,7 @@
     <div class="container-fluid">
         <div class="jumbotron">
             <h1>Scanning button will go here, it opens your camera to scan</h1>
+            <asp:Button id="btnReserve" Text="Reserve Table" OnClick="btnReserve_Click" runat="server" />
         </div>
 
     </div>
