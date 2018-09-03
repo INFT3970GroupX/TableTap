@@ -45,7 +45,7 @@ namespace TableTap.Models
 	       lastName		    NVARCHAR(40),
 	       adminPermission	BIT NOT NULL DEFAULT 0
          * 
-         * /
+         */
 
  
  

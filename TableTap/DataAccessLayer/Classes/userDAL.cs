@@ -37,4 +37,5 @@ namespace TableTap.DataAccessLayer.Classes
 
             }
         }
+    }
 }
