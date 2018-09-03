@@ -19,12 +19,12 @@ namespace TableTap.Models
 
         public int AdminPermission { get; set; }
 
-        //public UserModel()
-        //{
+        public UserModel()
+        {
 
-        //}
+        }
 
-        public UserModel(int id, string email, string psw, string fname, string lname, int admperm)
+        public UserModel(int id, string email, string psw, string fname, string lname, byte admperm)
         {
             this.UserID = id;
             this.Email = email;
@@ -37,15 +37,7 @@ namespace TableTap.Models
 }
 
 
-        /*
-         * userID			INT IDENTITY(100001,1) PRIMARY KEY,
-	       emailAddress	    NVARCHAR(100) NOT NULL,
-	       passcode		    NVARCHAR(30) NOT NULL,
-	       firstName		NVARCHAR(40),
-	       lastName		    NVARCHAR(40),
-	       adminPermission	BIT NOT NULL DEFAULT 0
-         * 
-         */
+
 
  
  
