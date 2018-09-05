@@ -11,7 +11,7 @@ namespace TableTap.BusinessLayer.Classes
     {
 
         public string TableQR { get; set; }
-        
+
         public int RoomID { get; set; }
 
         public int PersonCapacity { get; set; }

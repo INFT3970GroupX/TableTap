@@ -19,7 +19,7 @@ namespace TableTap
 
             //Util-3 Look for the name in the connectionStrings section.  
             ConnectionStringSettings settings =
-            ConfigurationManager.ConnectionStrings["TableTap.Properties.Settings.connString"];
+            ConfigurationManager.ConnectionStrings["udbTableTapConnectionString"];
 
             //If found, return the connection string.  
             if (settings != null)

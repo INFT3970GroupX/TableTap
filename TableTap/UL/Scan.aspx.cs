@@ -13,15 +13,16 @@ namespace TableTap.UL
 {
     public partial class Scan : System.Web.UI.Page
     {
+        string DBConn;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DBConn = ConfigurationManager.ConnectionStrings["udbTableTapConnectionString"].ConnectionString;
         }
 
         protected void btnReserve_Click(object sender, EventArgs e)
         {
             var tableManager = new TableManager();
-
             tableManager.EditAvailability("mvne439j0d");
         }
     }
