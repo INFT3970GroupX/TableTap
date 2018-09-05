@@ -6,6 +6,7 @@
         <div class="jumbotron">
             <h1>Scanning button will go here, it opens your camera to scan</h1>
             <asp:Button id="btnReserve" Text="Reserve Table" OnClick="btnReserve_Click" runat="server" />
+            <asp:TextBox ID="textBox2" runat="server" />
         </div>
 
     </div>
