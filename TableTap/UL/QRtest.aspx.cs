@@ -39,8 +39,8 @@ namespace TableTap.UL
             img.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Png);
 
             //Change to your own location if you want to store a copy-- not needed
-            //img.Save("D:\\MyDocuments\\GitHub\\TableTap\\TableTap\\TestQR\\LastQRCodeCreated.png", ImageFormat.Png);
-            //QRImage.ImageUrl = "LastQRCodeCreated.png";
+            img.Save("E:\\Users\\Desktop\\LastQRCodeCreated.png", ImageFormat.Png);
+            QRImage.ImageUrl = "LastQRCodeCreated.png";
         }
     }
 
