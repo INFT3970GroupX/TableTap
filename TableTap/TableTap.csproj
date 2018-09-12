@@ -90,6 +90,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BusinessLayer\JavaScript\photo.js" />
     <Content Include="CSS\Map.css" />
     <Content Include="Images\Room1.png" />
     <Content Include="Images\Room2.png" />

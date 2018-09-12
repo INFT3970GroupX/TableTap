@@ -27,7 +27,7 @@ namespace TableTap.UL
         //when reserve button clicked, (temporarily) displays the qrcodes string (doesn't yet) activate EditAvailability() function
         protected void btnReserve_Click(object sender, EventArgs e) {
 
-            Bitmap qrcode = new Bitmap("E:\\Users\\Desktop\\LastQRCodeCreated.png");
+            Bitmap qrcode = new Bitmap("E:\\Users\\Desktop\\LastQRCodeCreated.png"); //make a QRCode via the QRTest page. You might have to change directory to get save file to work
 
             QRCodeDecoder dec = new QRCodeDecoder();
             textBox2.Text = (dec.Decode(new QRCodeBitmapImage(qrcode)));
@@ -35,6 +35,5 @@ namespace TableTap.UL
             //var tableManager = new TableManager();
             //tableManager.EditAvailability("mvne439j0d");
         }
-
     }
 }
