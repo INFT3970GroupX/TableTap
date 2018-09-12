@@ -22,7 +22,7 @@ namespace TableTap.UL
         {
             var tableManager = new TableManager();
 
-            tableManager.EditAvailability("mvne439j0d")
+            tableManager.EditAvailability("mvne439j0d");
         }
     }
 }
