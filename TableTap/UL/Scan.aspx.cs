@@ -27,9 +27,9 @@ namespace TableTap.UL
         //when reserve button clicked, (temporarily) displays the qrcodes string (doesn't yet) activate EditAvailability() function
         protected void btnReserve_Click(object sender, EventArgs e) {
 
-<<<<<<< HEAD
+            /*
             tableManager.EditAvailability("mvne439j0d");
-=======
+
             Bitmap qrcode = new Bitmap("E:\\Users\\Desktop\\LastQRCodeCreated.png");
 
             QRCodeDecoder dec = new QRCodeDecoder();
@@ -37,7 +37,8 @@ namespace TableTap.UL
 
             //var tableManager = new TableManager();
             //tableManager.EditAvailability("mvne439j0d");
->>>>>>> 951541a171f7d047ab846e0e21fb3d802bed843d
+
+                */
         }
 
     }
