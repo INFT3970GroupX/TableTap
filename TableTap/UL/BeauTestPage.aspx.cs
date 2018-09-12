@@ -23,11 +23,16 @@ namespace TableTap.UL
 
             UserModel user = new UserModel();
 
-            int id = 1;
+            int id = 100001;
             user = UserBL.getUserByID(id);
             txtbxUserID.Text = user.UserID.ToString();
+            txtbxEmail.Text = user.Email.ToString();
+            txtbxPassword.Text = user.Password.ToString();
+            txtbxFname.Text = user.FirstName.ToString();
+            txtbxLname.Text = user.LastName.ToString();
+            txtbxAdminP.Text = user.AdminPermission.ToString();
 
-            
+
 
 
 

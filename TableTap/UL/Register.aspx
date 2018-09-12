@@ -16,11 +16,21 @@
 	                    </div> 
 						
 						<div class="form-group">
-							<label for="name" class="cols-sm-2 control-label">Your Name</label>
+							<label for="name" class="cols-sm-2 control-label">Your First Name</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+									<input type="text" class="form-control" name="name" id="inFirstName"  placeholder="Enter your first name" required="required" runat="server"/>
+								</div>
+							</div>
+						</div>
+
+                        <div class="form-group">
+							<label for="name" class="cols-sm-2 control-label">Your Last Name</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input type="text" class="form-control" name="name" id="inLastName"  placeholder="Enter your last name" required="required" runat="server"/>
 								</div>
 							</div>
 						</div>
@@ -30,17 +40,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
-							<div class="cols-sm-10">
-								<div class="input-group">
-									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+									<input type="email" class="form-control" name="email" id="inEmail"  placeholder="Enter your Email" required="required" runat="server"/>
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="inPassword"  placeholder="Enter your Password" required="required" runat="server"/>
 								</div>
 							</div>
 						</div>
@@ -60,13 +60,21 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+									<input type="password" class="form-control" name="confirm" id="inConfirmPassword"  placeholder="Confirm your Password" required="required" runat="server"/>
 								</div>
 							</div>
 						</div>
 
+                        <!-- matching passwords validator-->
+                        <asp:CompareValidator ID="cvPsw" runat="server"
+                            ControlToValidate="inConfirmPassword"
+                            ControlToCompare="inPassword" Display="Dynamic"
+                            ErrorMessage="Email re-entry" ForeColor="Red">
+                             Must match first password
+                        </asp:CompareValidator><br />
+
 						<div class="form-group ">
-							<button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button>
+							<asp:Button type="button" Text="Register" class="btn btn-primary btn-lg btn-block login-button" id="registerButton" onclick="registerButton_Click" runat="server" />
 						</div>
 						
 					</form>

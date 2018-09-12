@@ -13,5 +13,12 @@ namespace TableTap.UL
         {
 
         }
+        protected void registerButton_Click(Object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                Response.Redirect("Home.aspx");
+            }
+        }
     }
 }

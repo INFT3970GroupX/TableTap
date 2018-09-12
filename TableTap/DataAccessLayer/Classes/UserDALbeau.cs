@@ -50,7 +50,7 @@ namespace TableTap.DataAccessLayer
         {
             UserModel user = new UserModel();
 
-            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["udbTapleTapConnectionString"].ConnectionString);
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             using (conn)
             {
@@ -63,7 +63,9 @@ namespace TableTap.DataAccessLayer
                     SqlDataReader dr = command.ExecuteReader();
                     dr.Read();
 
-                    user = new UserModel();
+
+                  
+                    //user = new UserModel();
                     user.UserID = Convert.ToInt32(dr["userID"]);
                     user.Email = dr["emailAddress"].ToString();
                     user.Password = dr["passcode"].ToString();
