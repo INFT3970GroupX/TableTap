@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Net;
-using System.Net.Mail;
 using System.Web.UI.WebControls;
+using MimeKit;
+using MailKit.Net.Smtp;
 
 
 /// <summary>
 /// SENDS BASIC EMAIL USING 
-/// using System.Net;
-/// using System.Net.Mail;
-/// does not need addon or API
+/// using MimeKit;
+/// using MailKit.Net.Smtp;
+/// Requires Mailkit from NUGET
 /// can be used to create more complex with extra commands
 /// </summary>
 namespace TableTap.TestNotification
@@ -31,15 +31,22 @@ protected void Button1_Click(object sender, EventArgs e)
             string subject = txbSubject.Text;
             string message = txbMessage.Text;
             /// ---- Start EMAIL NOTIFICATION ----\\\
-            SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            smtp.EnableSsl = true;
-            smtp.Port = 587;
-            // Email address login details
-            smtp.Credentials = new NetworkCredential("eTableTap@GMail.com",
-               "INFT3970");
-            // Sent from address, target address, subject and message
-            smtp.Send("eTableTap@GMail.com", email,
-                   subject, message);
-        }
+            var eMail = new MimeMessage();
+
+            eMail.From.Add(new MailboxAddress("eTableTap", "eTableTap@GMail.com"));
+            eMail.To.Add(new MailboxAddress("Valued Client", email));
+            eMail.Subject = "Test mail";
+            eMail.Body = new TextPart("plain") { Text = @"This is a test" };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.gmail.com", 587);
+
+                ////Note: only needed if the SMTP server requires authentication
+                client.Authenticate("eTableTap@GMail.com", "INFT3970");
+
+                client.Send(eMail);
+                client.Disconnect(true);
+            }
     }
 }
