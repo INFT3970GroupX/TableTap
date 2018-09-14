@@ -27,7 +27,8 @@ namespace TableTap.UL
                 newUser.FirstName = inFirstName.Value;
                 newUser.LastName = inLastName.Value;
                 newUser.AdminPermission = 0;
-                BusinessLayer.UserBLbeau.ProcessAddNewUser(newUser);
+
+                BusinessLayer.UserBL.ProcessAddNewUser(newUser);
                 
 
                 Response.Redirect("Home.aspx");

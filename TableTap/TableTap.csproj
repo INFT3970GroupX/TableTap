@@ -182,10 +182,12 @@
     <Compile Include="BusinessLayer\Classes\TableManager.cs" />
     <Compile Include="BusinessLayer\Classes\Table.cs" />
     <Compile Include="BusinessLayer\Classes\User.cs" />
-    <Compile Include="BusinessLayer\Classes\UserBLbeau.cs" />
+    <Compile Include="BusinessLayer\Classes\UserBL.cs" />
     <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
+    <Compile Include="DataAccessLayer\Classes\UserDALkepler.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
-    <Compile Include="DataAccessLayer\Classes\UserDALbeau.cs" />
+    <Compile Include="Models\BuildingModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />

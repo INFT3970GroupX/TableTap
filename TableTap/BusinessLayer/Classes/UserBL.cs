@@ -8,20 +8,20 @@ using TableTap.Models;
 
 namespace TableTap.BusinessLayer
 {
-    public class UserBLbeau
+    public class UserBL
     {
         public static List<UserModel> FillUsersList()
         {
             List<UserModel> users = new List<UserModel>();
 
-            users = UserDALbeau.LoadUsersList();
+            users = UserDAL.LoadUsersList();
 
             return users;
         }
 
         public static UserModel getUserByID(int id)
         {
-            UserModel user = UserDALbeau.loadUserByID(id);
+            UserModel user = UserDAL.loadUserByID(id);
 
             return user;
         }
@@ -30,7 +30,7 @@ namespace TableTap.BusinessLayer
         {
             UserModel newProduct = user;
 
-            UserDALbeau.AddNewUser(user);
+            UserDAL.AddNewUser(user);
 
         }
 
