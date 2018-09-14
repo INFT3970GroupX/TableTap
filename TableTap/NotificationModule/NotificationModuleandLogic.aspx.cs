@@ -59,7 +59,10 @@ namespace TableTap.NotificationModule
 
             // variables for the email address, email subject line, and message respectively
             string subject = fName + "  your TableTap booking";
-            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " + sName + ", your tabletap booking has been created for the table: " + Environment.NewLine + tableID + " in " + roomName + Environment.NewLine + Environment.NewLine + "Regards, TableTap team       www.etabletap.com";
+            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " 
+                + sName + ", your tabletap booking has been created for the table: " 
+                + Environment.NewLine + tableID + " in " + roomName + Environment.NewLine + Environment.NewLine 
+                + "Regards, TableTap team       www.etabletap.com";
             /// ---- Start EMAIL NOTIFICATION ----\\\
 
             // new Mail instance
@@ -140,7 +143,11 @@ namespace TableTap.NotificationModule
 
             // variables for the email address, email subject line, and message respectively
             string subject = fName + "  your TableTap account";
-            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " + sName + ", your table tap account has been created with the email: " + Environment.NewLine + email + Environment.NewLine + "And the mobile number: " + Environment.NewLine + phone + Environment.NewLine + Environment.NewLine + "Regards, TableTap team       www.etabletap.com";
+            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " 
+                + sName + ", your table tap account has been created with the email: " + Environment.NewLine 
+                + email + Environment.NewLine + "And the mobile number: " + Environment.NewLine 
+                + phone + Environment.NewLine + Environment.NewLine 
+                + "Regards, TableTap team       www.etabletap.com";
             /// ---- Start EMAIL NOTIFICATION ----\\\
 
             // new Mail instance
