@@ -118,6 +118,7 @@
     <Content Include="Images\Room1.png" />
     <Content Include="Images\Room2.png" />
     <Content Include="Images\Room3.png" />
+    <Content Include="NotificationModule\NotificationModuleandLogic.aspx" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\TableTap.csprojResolveAssemblyReference.cache" />
     <None Include="packages.config" />
@@ -213,6 +214,13 @@
     <Compile Include="DataAccessLayer\Classes\UserDALbeau.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
+    <Compile Include="NotificationModule\NotificationModuleandLogic.aspx.cs">
+      <DependentUpon>NotificationModuleandLogic.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NotificationModule\NotificationModuleandLogic.aspx.designer.cs">
+      <DependentUpon>NotificationModuleandLogic.aspx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
