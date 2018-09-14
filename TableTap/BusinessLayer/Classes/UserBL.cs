@@ -28,7 +28,7 @@ namespace TableTap.BusinessLayer
 
         public static void ProcessAddNewUser(UserModel user)
         {
-            UserModel newProduct = user;
+            UserModel newUser = user;
 
             UserDAL.AddNewUser(user);
 

@@ -105,6 +105,8 @@
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="UL\Account.aspx" />
+    <Content Include="UL\AdminAddBuilding.aspx" />
+    <Content Include="UL\AdminHome.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Home.aspx" />
     <Content Include="UL\Login.aspx" />
@@ -179,10 +181,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Classes\BuildingBL.cs" />
+    <Compile Include="BusinessLayer\Classes\RoomBL.cs" />
+    <Compile Include="BusinessLayer\Classes\TableBL.cs" />
     <Compile Include="BusinessLayer\Classes\TableManager.cs" />
-    <Compile Include="BusinessLayer\Classes\Table.cs" />
     <Compile Include="BusinessLayer\Classes\User.cs" />
     <Compile Include="BusinessLayer\Classes\UserBL.cs" />
+    <Compile Include="DataAccessLayer\Classes\BuildingDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDALkepler.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
@@ -205,6 +210,20 @@
     </Compile>
     <Compile Include="UL\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminAddBuilding.aspx.cs">
+      <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminAddBuilding.aspx.designer.cs">
+      <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>

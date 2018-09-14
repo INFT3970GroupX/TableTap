@@ -27,7 +27,7 @@ namespace TableTap.DataAccessLayer.Classes
 
 
 
-                using (SqlCommand command = new SqlCommand(
+               /* using (SqlCommand command = new SqlCommand(
                 "INSERT INTO tblTable (emailAddress, passcode, firstName, lastName, adminPermission) VALUES ("
                     + "'" + newTable.Email.ToString() + "'" + ", "
 
@@ -37,7 +37,7 @@ namespace TableTap.DataAccessLayer.Classes
                 {
                     command.ExecuteNonQuery();
                 }
-                conn.Close();
+                conn.Close(); */
             }
 
         }
