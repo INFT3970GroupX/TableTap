@@ -24,7 +24,7 @@ namespace TableTap.UL
             UserModel user = new UserModel();
 
             int id = 100001;
-            user = UserBL.getUserByID(id);
+            user = UserBLbeau.getUserByID(id);
             txtbxUserID.Text = user.UserID.ToString();
             txtbxEmail.Text = user.Email.ToString();
             txtbxPassword.Text = user.Password.ToString();

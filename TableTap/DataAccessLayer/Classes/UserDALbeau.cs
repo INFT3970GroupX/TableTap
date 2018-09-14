@@ -8,7 +8,7 @@ using TableTap.Models;
 
 namespace TableTap.DataAccessLayer
 {
-    public class UserDAL
+    public class UserDALbeau
     {
         public static List<UserModel> LoadUsersList()
         {
@@ -21,7 +21,7 @@ namespace TableTap.DataAccessLayer
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT * FROM tblUser" ,
+                    "SELECT * FROM tblUser",
                     conn))
                 {
                     SqlDataReader dr = command.ExecuteReader();
@@ -64,7 +64,7 @@ namespace TableTap.DataAccessLayer
                     dr.Read();
 
 
-                  
+
                     //user = new UserModel();
                     user.UserID = Convert.ToInt32(dr["userID"]);
                     user.Email = dr["emailAddress"].ToString();
@@ -81,6 +81,37 @@ namespace TableTap.DataAccessLayer
 
             return user;
         }
+
+        public static void AddNewUser(UserModel user)
+        {
+            UserModel newUser = user;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+              using (conn)
+              {
+                  conn.Open();
+
+                    
+
+                  using (SqlCommand command = new SqlCommand(
+                  "INSERT INTO tblUser (emailAddress, passcode, firstName, lastName, adminPermission) VALUES ("
+                      + "'" + newUser.Email.ToString() + "'" + ", "
+                      + "'" + newUser.Password.ToString() + "'" + ", "
+                      + "'" + newUser.FirstName + "'" + ", "
+                      + "'" + newUser.LastName + "'" + ", "
+                      + "'" + newUser.AdminPermission+ "'"
+                      + ")"
+                      ,
+                      conn))
+                  {
+                      command.ExecuteNonQuery();
+                  }
+                  conn.Close();
+              } 
+            
+        }
+
 
     }
 }

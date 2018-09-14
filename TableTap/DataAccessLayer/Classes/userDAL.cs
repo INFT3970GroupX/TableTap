@@ -14,7 +14,7 @@ namespace TableTap.DataAccessLayer.Classes
     public class UserDAL
     {
 
-        //Add user with input strings from registration page
+        //Add user with input strings from registration page 
         public void AddUser(string UserEmail, string FirstName, string LastName, string UserPassword)
         {
             string DBConn;
