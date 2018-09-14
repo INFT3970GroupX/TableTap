@@ -128,8 +128,8 @@
     <Content Include="obj\Debug\TableTap.csproj.FileListAbsolute.txt" />
     <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.0.0.min.map" />
-    <Content Include="TestNotification\TestEmail.aspx" />
-    <Content Include="TestNotification\TestTwilio.aspx" />
+    <Content Include="NotificationModule\TestNotification\TestEmail.aspx" />
+    <Content Include="NotificationModule\TestNotification\TestTwilio.aspx" />
     <Content Include="UL\Account.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Home.aspx" />
@@ -230,18 +230,18 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="TestNotification\TestEmail.aspx.cs">
+    <Compile Include="NotificationModule\TestNotification\TestEmail.aspx.cs">
       <DependentUpon>TestEmail.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestNotification\TestEmail.aspx.designer.cs">
+    <Compile Include="NotificationModule\TestNotification\TestEmail.aspx.designer.cs">
       <DependentUpon>TestEmail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TestNotification\TestTwilio.aspx.cs">
+    <Compile Include="NotificationModule\TestNotification\TestTwilio.aspx.cs">
       <DependentUpon>TestTwilio.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TestNotification\TestTwilio.aspx.designer.cs">
+    <Compile Include="NotificationModule\TestNotification\TestTwilio.aspx.designer.cs">
       <DependentUpon>TestTwilio.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\Account.aspx.cs">
