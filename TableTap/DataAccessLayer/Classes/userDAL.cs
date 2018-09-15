@@ -113,5 +113,41 @@ namespace TableTap.DataAccessLayer
         }
 
 
+        // login function - check username + password
+        public static bool loginCheck(string email, string password)
+        {
+            bool exists = false;
+
+
+            UserModel user = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblUser WHERE emailAddress=" + email.ToString(), conn))
+                {
+                    SqlDataReader dr = command.ExecuteReader();
+                    dr.Read();
+
+                    if (dr["emailAddress"].ToString() == email)
+                    {
+                        exists = true;
+                    }
+                    else
+                    {
+                        exists = false;
+                    }
+
+                    dr.Close();
+                }
+              
+            }
+         return exists;
+        }
+
     }
 }

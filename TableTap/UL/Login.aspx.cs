@@ -1,4 +1,7 @@
 ﻿using System;
+// remove data access
+using TableTap.DataAccessLayer;
+// remove end
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,11 +28,26 @@ namespace TableTap.UL
         protected void loginButton_Click(object sender, EventArgs e)
         {
 
-            string firstName = "Hayden";
-            string Surname = "bartlett";
-            string email = "hayden.bartlett1@hotmail.com";
-            TextBox1.Text = txbUsername.Value;
+            string password = txbPassword.Value;
+            string username = txbUsername.Value;
+            bool test = UserDAL.loginCheck(username, password);
+            if(test == true)
+            {
+                TextBox1.Text = "LOGGED ON";
+                    
+            }
+            else
+            {
+                TextBox1.Text = "Failed";
+            }
+
+
+
+
+
 
         }
+
+
     }
 }

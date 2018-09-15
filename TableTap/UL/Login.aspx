@@ -22,7 +22,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="text" class="form-control" name="username" id="txbUsername"  runat="server"  placeholder="Enter your Username"/>
+									<input type="text" class="form-control" name="username" id="txbUsername" required="required" runat="server"  placeholder="Enter your Username"/>
 								</div>
 							</div>
 						</div>
@@ -32,7 +32,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<input type="password" class="form-control" name="password" id="txbPassword" runat="server" placeholder="Enter your Password"/>
+									<input type="password" class="form-control" name="password" id="txbPassword" required="required" runat="server" placeholder="Enter your Password"/>
 								</div>
 							</div>
 						</div>
@@ -45,6 +45,7 @@
                         <div class="login-register">
 				            <asp:HyperLink runat="server" href="Register.aspx">Register</asp:HyperLink>
 				        </div>
+
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 					</form>
 				</div>
