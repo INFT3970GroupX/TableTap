@@ -128,12 +128,16 @@ namespace TableTap.DataAccessLayer
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT * FROM tblUser WHERE emailAddress=" + email.ToString(), conn))
+                    "SELECT * FROM tblUser WHERE emailAddress=" + "'" + email.ToString() + "'", conn))
                 {
+
+                    
                     SqlDataReader dr = command.ExecuteReader();
                     dr.Read();
 
-                    if (dr["emailAddress"].ToString() == email)
+                    user.Email = dr["emailAddress"].ToString();
+
+                    if (user.Email == email)
                     {
                         exists = true;
                     }
