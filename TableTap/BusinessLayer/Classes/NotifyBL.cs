@@ -109,7 +109,7 @@ namespace TableTap.BusinessLayer.Classes
 
 
         // account creation notification code includes both email and SMS notification requires sendmail(), phNumFormat() and sendSMS methods
-        public static void startaccountnotification(string email, string phone, string fName, string sName)
+        public static void startAccountNotification(string email, string phone, string fName, string sName)
         {
             ///--------------------EMAIL SECTION -------------------------\\\
 

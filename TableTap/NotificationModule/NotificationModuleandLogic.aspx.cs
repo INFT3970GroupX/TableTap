@@ -43,7 +43,7 @@ namespace TableTap.NotificationModule
             string sName = "Bartlett";
             string tableID = "6604";
             string roomName = "testing room";
-            NotifyBL.startaccountnotification(email, phone, fName, sName);
+            NotifyBL.startAccountNotification(email, phone, fName, sName);
             NotifyBL.startbookNotify(email, phone, fName, sName, tableID, roomName);
 
         }

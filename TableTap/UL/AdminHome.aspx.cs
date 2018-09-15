@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace TableTap.UL
 {
     public partial class AdminHome : System.Web.UI.Page
@@ -17,6 +18,11 @@ namespace TableTap.UL
         protected void EditBuildingButton_Click(Object sender, EventArgs e)
         {
             Response.Redirect("AdminAddBuilding.aspx");
+        }
+
+        protected void addUserButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminAddUser.aspx");
         }
     }
 }

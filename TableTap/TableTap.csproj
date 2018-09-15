@@ -132,6 +132,8 @@
     <Content Include="NotificationModule\TestNotification\TestTwilio.aspx" />
     <Content Include="UL\Account.aspx" />
     <Content Include="UL\AdminAddBuilding.aspx" />
+    <Content Include="UL\AdminAddUser.aspx" />
+    <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Home.aspx" />
@@ -265,6 +267,20 @@
     </Compile>
     <Compile Include="UL\AdminAddBuilding.aspx.designer.cs">
       <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminAddUser.aspx.cs">
+      <DependentUpon>AdminAddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminAddUser.aspx.designer.cs">
+      <DependentUpon>AdminAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminError.aspx.cs">
+      <DependentUpon>AdminError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminError.aspx.designer.cs">
+      <DependentUpon>AdminError.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\AdminHome.aspx.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>

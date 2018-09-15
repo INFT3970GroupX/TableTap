@@ -35,7 +35,7 @@ namespace TableTap.UL
                 string phone = "nope";
 
 
-                NotifyBL.startaccountnotification(inEmail.Value, phone, inFirstName.Value, inLastName.Value);
+                NotifyBL.startAccountNotification(inEmail.Value, phone, inFirstName.Value, inLastName.Value);
 
 
                 Response.Redirect("Home.aspx");
