@@ -176,5 +176,61 @@ namespace TableTap.DataAccessLayer
          return exists;
         }
 
+        /// <summary>
+        /// CREATED BY HAYDEN
+        /// Takes input of email
+        /// returns matching record as a list<string>
+        public static List<string> AdminUserEditCheck(string email)
+        {
+
+            List<string> userRecord = new List<string>();
+
+
+            UserModel user = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblUser WHERE emailAddress=" + "'" + email + "'", conn))
+                {
+
+
+                    SqlDataReader dr = command.ExecuteReader();
+                    dr.Read();
+
+                    try
+                    {
+
+                        user.UserID = Convert.ToInt32(dr["userID"]);
+                        user.Email = dr["emailAddress"].ToString();
+                        user.Password = dr["passcode"].ToString();
+                        user.FirstName = dr["firstName"].ToString();
+                        user.LastName = dr["lastName"].ToString();
+                        user.AdminPermission = Convert.ToByte(dr["adminPermission"]);
+                        // these lines of code are seperated for debugging
+                        userRecord.Add(user.UserID.ToString());
+                        userRecord.Add(user.Email);
+                        userRecord.Add(user.Password);
+                        userRecord.Add(user.FirstName);
+                        userRecord.Add(user.LastName);
+                        userRecord.Add(user.AdminPermission.ToString());
+                    }
+                    catch
+                    {
+                        userRecord = null;
+                    }
+                }
+            }
+           
+
+
+
+            return userRecord;
+        }
+
     }
 }

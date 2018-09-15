@@ -21,7 +21,7 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<input type="email" class="form-control" name="username" id="txbUsername" required="required" runat="server"  placeholder="Enter your Username"/>
+									<input type="email" class="form-control" name="username" id="txbUsername" required="required" runat="server"  placeholder="Enter your email"/>
 								    <asp:Label ID="lblUsername" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
 								</div>
 							</div>
@@ -44,7 +44,7 @@
 						</div>
 
                         <div class="login-register">
-				            <asp:Label ID="lblinfo" runat="server" Text="Don't have an accout?  "></asp:Label>
+				            <asp:Label ID="lblinfo" runat="server" Text="Don't have an account?  "></asp:Label>
 				            <asp:HyperLink runat="server" href="Register.aspx">Register</asp:HyperLink>
 				        </div>
 
