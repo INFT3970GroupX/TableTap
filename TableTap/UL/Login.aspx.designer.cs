@@ -22,6 +22,15 @@ namespace TableTap.UL {
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txbUsername;
         
         /// <summary>
+        /// lblUsername control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsername;
+        
+        /// <summary>
         /// txbPassword control.
         /// </summary>
         /// <remarks>
@@ -29,6 +38,15 @@ namespace TableTap.UL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txbPassword;
+        
+        /// <summary>
+        /// lblPassword control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblPassword;
         
         /// <summary>
         /// registerButton control.
@@ -40,12 +58,12 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.Button registerButton;
         
         /// <summary>
-        /// TextBox1 control.
+        /// lblinfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.Label lblinfo;
     }
 }

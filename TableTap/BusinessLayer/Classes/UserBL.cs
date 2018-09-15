@@ -36,5 +36,32 @@ namespace TableTap.BusinessLayer
 
 
 
+        /// <summary>
+        /// CREATED BY HAYDEN BARTLETT
+        /// scripting for login, passes information from login page to datalayer USERDB.
+        /// A return of INT 3 = username failure
+        /// A return of INT 2 = Password failure
+        /// A return of INT 1 = Login success
+        /// INPUT email Password, from Login
+        /// OUTPUT INT 1/3 passed from USERDAL
+        /// </summary>
+        public static int loginScripting(string email, string password)
+        {
+            int status = 3;
+            try
+            {
+                // PLACE ADDITIONAL CODE HERE
+              status =  UserDAL.loginCheck(email, password);
+            }
+            catch
+            {
+                status = 3;
+            }
+
+            return status;
+        }
+
+
+
     }
 }

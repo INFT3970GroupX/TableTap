@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    Dette er innlogginssiden
     <div class="container-fluid">
         <div class="jumbotron">
              <div class="row main">
@@ -18,11 +17,12 @@
 						
 
 						<div class="form-group">
-							<label for="username" class="cols-sm-2 control-label">Username</label>
+							Email address
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
 									<input type="email" class="form-control" name="username" id="txbUsername" required="required" runat="server"  placeholder="Enter your Username"/>
+								    <asp:Label ID="lblUsername" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
 								</div>
 							</div>
 						</div>
@@ -33,6 +33,7 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
 									<input type="password" class="form-control" name="password" id="txbPassword" required="required" runat="server" placeholder="Enter your Password"/>
+								    <asp:Label ID="lblPassword" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
 								</div>
 							</div>
 						</div>
@@ -43,10 +44,10 @@
 						</div>
 
                         <div class="login-register">
+				            <asp:Label ID="lblinfo" runat="server" Text="Don't have an accout?  "></asp:Label>
 				            <asp:HyperLink runat="server" href="Register.aspx">Register</asp:HyperLink>
 				        </div>
 
-                        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 					</form>
 				</div>
 			</div>

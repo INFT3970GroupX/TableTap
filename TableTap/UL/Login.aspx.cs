@@ -1,7 +1,5 @@
 ﻿using System;
-// remove data access
-using TableTap.DataAccessLayer;
-// remove end
+using TableTap.BusinessLayer;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,34 +16,34 @@ namespace TableTap.UL
         }
 
 
-        protected void tester()
-        {
 
 
-        }
-
-        ///------------ test method ---------\\\ OBSELETE DELETE ME 
         protected void loginButton_Click(object sender, EventArgs e)
         {
+            // cleares lables from any previous login attempt
+            lblUsername.Text = "";
+            lblPassword.Text = "";
+
 
             string password = txbPassword.Value;
             string username = txbUsername.Value;
-            int status = UserDAL.loginCheck(username, password);
+            int status = UserBL.loginScripting(username, password);
             if(status == 1)
             {
 
                 // 1 = login success
-                TextBox1.Text = "LOGGED ON";
+                // this section was used during testing, it has been left incase further tests are needed
+                
                     
             }
             else if(status == 2)
             {
                 // 2 = password failure
-                TextBox1.Text = "Password Incorrect";
+                lblPassword.Text = "Password Incorrect";
             }
             else
             {
-                TextBox1.Text = "Username not found";
+                lblUsername.Text = "Email not found";
             }
 
 
