@@ -29,10 +29,19 @@ namespace TableTap.UL
                 newUser.AdminPermission = 0;
 
                 BusinessLayer.UserBL.ProcessAddNewUser(newUser);
-                
+
+
+                // placeholder for future feature
+                string phone = "nope";
+
+
+                NotifyBL.startaccountnotification(inEmail.Value, phone, inFirstName.Value, inLastName.Value);
+
 
                 Response.Redirect("Home.aspx");
             }
+
+
         }
     }
 }

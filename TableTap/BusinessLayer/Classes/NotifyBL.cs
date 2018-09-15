@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using TableTap.BusinessLayer.Classes;
 // take note of the modules below:
 using MimeKit;
 using MailKit.Net.Smtp;
@@ -21,48 +18,22 @@ using Twilio.Types;
 /// this module includes supporting methods for above
 /// when applying methods from this module be sure to take ALL the linked methods or the logic will break
 /// </summary>
-namespace TableTap.NotificationModule
+
+namespace TableTap.BusinessLayer.Classes
 {
-    public partial class NotificationModuleandLogic : System.Web.UI.Page
+    public class NotifyBL
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        // Testing Method
-        // please avoid testing this method due to it using twilio credit, all methods  have already been tested and are working
-        protected void Tester_Click(object sender, EventArgs e)
-        {
-            // if its here the methods need it for a input
-            string email = "hayden.bartlett1@hotmail.com";
-            string phone = "0434346773";
-            string fName = "Hayden";
-            string sName = "Bartlett";
-            string tableID = "6604";
-            string roomName = "testing room";
-            NotifyBL.startaccountnotification(email, phone, fName, sName);
-            NotifyBL.startbookNotify(email, phone, fName, sName, tableID, roomName);
-
-        }
-
-
-
-
-
 
         // booking notification code requires sendmail(), phNumFormat() and sendSMS methods
-        protected void startbookNotify(string email, string phone, string fName, string sName, string tableID, string roomName)
+        public static void startbookNotify(string email, string phone, string fName, string sName, string tableID, string roomName)
         {
             ///--------------------EMAIL SECTION -------------------------\\\
 
             // variables for the email address, email subject line, and message respectively
             string subject = fName + "  your TableTap booking";
-            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " 
-                + sName + ", your tabletap booking has been created for the table: " 
-                + Environment.NewLine + tableID + " in " + roomName + Environment.NewLine + Environment.NewLine 
+            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " "
+                + sName + ", your tabletap booking has been created for the table: "
+                + Environment.NewLine + tableID + " in " + roomName + Environment.NewLine + Environment.NewLine
                 + "Regards, TableTap team       www.etabletap.com";
             /// ---- Start EMAIL NOTIFICATION ----\\\
 
@@ -105,7 +76,7 @@ namespace TableTap.NotificationModule
 
 
         // formats phonenumber to twilio standards input string phone output formattedPhone
-        protected string phNumFormat(string phone)
+        public static string phNumFormat(string phone)
         {
             int length = phone.Length;
             string formattedPhone;
@@ -116,7 +87,7 @@ namespace TableTap.NotificationModule
                 formattedPhone = phone;
             }
             // Detects if number is a 04 number and replaces 0 with +614
-            else if (length == 10 && phone.Substring(0,1) == "0")
+            else if (length == 10 && phone.Substring(0, 1) == "0")
             {
                 formattedPhone = "+614" + phone.Substring(2);
             }
@@ -125,7 +96,7 @@ namespace TableTap.NotificationModule
             {
                 formattedPhone = null;
             }
-                
+
 
 
             return formattedPhone;
@@ -138,16 +109,16 @@ namespace TableTap.NotificationModule
 
 
         // account creation notification code includes both email and SMS notification requires sendmail(), phNumFormat() and sendSMS methods
-        protected void startaccountnotification(string email, string phone, string fName, string sName)
+        public static void startaccountnotification(string email, string phone, string fName, string sName)
         {
             ///--------------------EMAIL SECTION -------------------------\\\
 
             // variables for the email address, email subject line, and message respectively
             string subject = fName + "  your TableTap account";
-            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " " 
-                + sName + ", your table tap account has been created with the email: " + Environment.NewLine 
-                + email + Environment.NewLine + "And the mobile number: " + Environment.NewLine 
-                + phone + Environment.NewLine + Environment.NewLine 
+            string message = "Hi " + fName + Environment.NewLine + "Thank you, " + fName + " "
+                + sName + ", your table tap account has been created with the email: " + Environment.NewLine
+                + email + Environment.NewLine + "And the mobile number: " + Environment.NewLine
+                + phone + Environment.NewLine + Environment.NewLine
                 + "Regards, TableTap team       www.etabletap.com";
             /// ---- Start EMAIL NOTIFICATION ----\\\
 
@@ -172,7 +143,7 @@ namespace TableTap.NotificationModule
             string forPhone = phNumFormat(phone);
 
             //if statement preventing the application from failing if there was a issue detected with "phone" in method phNumFormat  
-            if(forPhone == null)
+            if (forPhone == null)
             {
                 // POSSIBLE ERROR MESSAGE TO BE ADDED, ELSE LEAVE BLANK
             }
@@ -181,7 +152,7 @@ namespace TableTap.NotificationModule
                 //calls external method to send SMS via twilio
                 sendSMS(smsMessage, forPhone);
             }
-            
+
         }
 
 
@@ -191,7 +162,7 @@ namespace TableTap.NotificationModule
 
 
         // method for sending Emails using SmtpClient, requires input of MimeMessage Variable
-        protected void sendemail(MimeMessage eMail)
+        public static void sendemail(MimeMessage eMail)
         {
             using (var client = new SmtpClient())
             {
@@ -211,16 +182,16 @@ namespace TableTap.NotificationModule
 
 
         // Twilio SMS notification method, requires input of a message and a phone number as +614 format
-        protected void sendSMS(string message, string phone)
+        public static void sendSMS(string message, string phone)
         {
-        /// ------------------------------------------------------SUPPLIED BY TWILIO -------------------------- \\\
-        // Account Information from Twilio account
-        const string accountSid = "ACb3c8b45d687f30b390eace020d89fe75";
-        const string authToken = "964f618c7094b7051e85fb65d13c676d";
+            /// ------------------------------------------------------SUPPLIED BY TWILIO -------------------------- \\\
+            // Account Information from Twilio account
+            const string accountSid = "ACb3c8b45d687f30b390eace020d89fe75";
+            const string authToken = "964f618c7094b7051e85fb65d13c676d";
 
 
 
-        TwilioClient.Init(accountSid, authToken);
+            TwilioClient.Init(accountSid, authToken);
             // creates message and specifies numbers
             var smsMessage = MessageResource.Create(
                 // contains message to be sent
@@ -231,9 +202,15 @@ namespace TableTap.NotificationModule
                 to: new PhoneNumber(phone)
             );
 
-        Console.WriteLine(smsMessage.Sid);
-        /// ------------------------------------------------------SUPPLIED BY TWILIO END-------------------------- \\\
+            Console.WriteLine(smsMessage.Sid);
+            /// ------------------------------------------------------SUPPLIED BY TWILIO END-------------------------- \\\
         }
 
     }
+
+
+    
+
+
+    
 }

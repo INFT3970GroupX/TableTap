@@ -13,5 +13,23 @@ namespace TableTap.UL
         {
 
         }
+
+
+        protected void tester()
+        {
+
+
+        }
+
+        ///------------ test method ---------\\\
+        protected void loginButton_Click(object sender, EventArgs e)
+        {
+
+            string firstName = "Hayden";
+            string Surname = "bartlett";
+            string email = "hayden.bartlett1@hotmail.com";
+            TextBox1.Text = txbUsername.Value;
+
+        }
     }
 }
