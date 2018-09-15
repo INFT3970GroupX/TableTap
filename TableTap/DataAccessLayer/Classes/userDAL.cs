@@ -113,10 +113,13 @@ namespace TableTap.DataAccessLayer
         }
 
 
-        // login function - check username + password
-        public static bool loginCheck(string email, string password)
+        // login function - check username + password 
+        //returns int values 1/3 
+        //Input email and password
+        //CREATED BY HAYDEN
+        public static Int32 loginCheck(string email, string password)
         {
-            bool exists = false;
+            int exists = 3;
 
 
             UserModel user = new UserModel();
@@ -134,17 +137,37 @@ namespace TableTap.DataAccessLayer
                     
                     SqlDataReader dr = command.ExecuteReader();
                     dr.Read();
-
-                    user.Email = dr["emailAddress"].ToString();
-
-                    if (user.Email == email)
+                    try
                     {
-                        exists = true;
+                        user.Email = dr["emailAddress"].ToString();
+                    }
+                    catch
+                    {
+                        user.Email = null;
+                    }
+
+                    try
+                    { 
+                    user.Password = dr["passcode"].ToString();
+                    }
+                    catch
+                    {
+                        user.Password = null;
+                    }
+
+                    if (user.Email == email && user.Password == password)
+                    {
+                        exists = 1;
+                    }
+                    else if(user.Email == email && user.Password != password)
+                    {
+                        exists = 2;
                     }
                     else
                     {
-                        exists = false;
+                        exists = 3;
                     }
+                    
 
                     dr.Close();
                 }
