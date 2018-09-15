@@ -1,41 +1,117 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
-using TableTap.BusinessLayer.Classes;
+using System.Linq;
+using System.Web;
+using TableTap.Models;
 
-namespace TableTap.DataAccessLayer.Classes
+namespace TableTap.DataAccessLayer
 {
     public class UserDAL
     {
-
-        //Add user with input strings from registration page
-        public void AddUser(string UserEmail, string FirstName, string LastName, string UserPassword)
+        public static List<UserModel> LoadUsersList()
         {
-            string DBConn;
-            DBConn = ConfigurationManager.ConnectionStrings["udbTableTapConnectionString"].ConnectionString;
-            using (SqlConnection sqlConnection = new SqlConnection(DBConn))
+            List<UserModel> users = new List<UserModel>();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
             {
-                sqlConnection.Open();
+                conn.Open();
 
-                using (SqlCommand command = sqlConnection.CreateCommand())
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblUser",
+                    conn))
                 {
-                    command.CommandText = "INSERT INTO tblUser (email, firstName, lastName, passcode) VALUES (@email, @firstName, @lastName, @passcode)";
+                    SqlDataReader dr = command.ExecuteReader();
+                    UserModel user;
+                    while (dr.Read())
+                    {
+                        user = new UserModel();
+                        user.UserID = Convert.ToInt32(dr["userID"]);
+                        user.Email = dr["emailAddress"].ToString();
+                        user.Password = dr["passcode"].ToString();
+                        user.FirstName = dr["firstName"].ToString();
+                        user.LastName = dr["lastName"].ToString();
+                        user.AdminPermission = Convert.ToByte(dr["adminPermission"]);
 
-                    command.Parameters.AddWithValue("@email", UserEmail);
-                    command.Parameters.AddWithValue("@firstName", FirstName);
-                    command.Parameters.AddWithValue("@lastName", LastName);
-                    command.Parameters.AddWithValue("@passcode", UserPassword);
-
-                    int result = command.ExecuteNonQuery();
+                        users.Add(user);
+                    }
+                    dr.Close();
                 }
-
+                conn.Close();
             }
+
+            return users;
         }
+
+        public static UserModel loadUserByID(int id)
+        {
+            UserModel user = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblUser WHERE userID=" + id.ToString(),
+                    conn))
+                {
+                    SqlDataReader dr = command.ExecuteReader();
+                    dr.Read();
+
+
+
+                    //user = new UserModel();
+                    user.UserID = Convert.ToInt32(dr["userID"]);
+                    user.Email = dr["emailAddress"].ToString();
+                    user.Password = dr["passcode"].ToString();
+                    user.FirstName = dr["firstName"].ToString();
+                    user.LastName = dr["lastName"].ToString();
+                    user.AdminPermission = Convert.ToByte(dr["adminPermission"]);
+
+
+                    dr.Close();
+                }
+                conn.Close();
+            }
+
+            return user;
+        }
+
+        public static void AddNewUser(UserModel user)
+        {
+            UserModel newUser = user;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+              using (conn)
+              {
+                  conn.Open();
+
+                    
+
+                  using (SqlCommand command = new SqlCommand(
+                  "INSERT INTO tblUser (emailAddress, passcode, firstName, lastName, adminPermission) VALUES ("
+                      + "'" + newUser.Email.ToString() + "'" + ", "
+                      + "'" + newUser.Password.ToString() + "'" + ", "
+                      + "'" + newUser.FirstName + "'" + ", "
+                      + "'" + newUser.LastName + "'" + ", "
+                      + "'" + newUser.AdminPermission+ "'"
+                      + ")"
+                      ,
+                      conn))
+                  {
+                      command.ExecuteNonQuery();
+                  }
+                  conn.Close();
+              } 
+            
+        }
+
+
     }
 }

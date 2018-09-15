@@ -131,6 +131,8 @@
     <Content Include="NotificationModule\TestNotification\TestEmail.aspx" />
     <Content Include="NotificationModule\TestNotification\TestTwilio.aspx" />
     <Content Include="UL\Account.aspx" />
+    <Content Include="UL\AdminAddBuilding.aspx" />
+    <Content Include="UL\AdminHome.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Home.aspx" />
     <Content Include="UL\Login.aspx" />
@@ -205,13 +207,18 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\Classes\BuildingBL.cs" />
+    <Compile Include="BusinessLayer\Classes\RoomBL.cs" />
+    <Compile Include="BusinessLayer\Classes\TableBL.cs" />
     <Compile Include="BusinessLayer\Classes\TableManager.cs" />
-    <Compile Include="BusinessLayer\Classes\Table.cs" />
     <Compile Include="BusinessLayer\Classes\User.cs" />
-    <Compile Include="BusinessLayer\Classes\UserBLbeau.cs" />
+    <Compile Include="BusinessLayer\Classes\UserBL.cs" />
+    <Compile Include="DataAccessLayer\Classes\BuildingDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
+    <Compile Include="DataAccessLayer\Classes\UserDALkepler.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
-    <Compile Include="DataAccessLayer\Classes\UserDALbeau.cs" />
+    <Compile Include="Models\BuildingModel.cs" />
+    <Compile Include="Models\RoomModel.cs" />
     <Compile Include="Models\TableModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="NotificationModule\NotificationModuleandLogic.aspx.cs">
@@ -250,6 +257,20 @@
     </Compile>
     <Compile Include="UL\Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminAddBuilding.aspx.cs">
+      <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminAddBuilding.aspx.designer.cs">
+      <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminHome.aspx.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminHome.aspx.designer.cs">
+      <DependentUpon>AdminHome.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>

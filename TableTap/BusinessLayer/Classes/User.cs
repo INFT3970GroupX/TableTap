@@ -20,7 +20,7 @@ namespace TableTap.BusinessLayer.Classes
 
         public void AddUser()
         {
-            UserDAL obj = new UserDAL();
+            UserDALkepler obj = new UserDALkepler();
             obj.AddUser(UserEmail, FirstName, LastName, UserPasscode);
         }
 

@@ -7,31 +7,35 @@ namespace TableTap.Models
 {
     public class TableModel
     {
-        public int ReservationID { get; set; }
-
-        public int UserID { get; set; }
 
         public int TableID { get; set; }
 
-        public DateTime ReservationStartTime { get; set; }
+        public string TableQR { get; set; }
 
-        public DateTime ReservationEndTime { get; set; }
+        public int RoomID { get; set; }
 
-        public string GroupName { get; set; }
+        public int PersonCapacity { get; set; }
 
-        //public TableModel()
-        //{
+        public string Category { get; set; }
 
-        //}
+        public bool Available { get; set; }
 
-        public TableModel(int resid, int uid, int tid, DateTime resstart, DateTime resend, string group)
+        public bool Reserable { get; set; }
+
+        public TableModel()
         {
-            this.ReservationID = resid;
-            this.UserID = uid;
+
+        }
+
+        public TableModel(int tid, string tqr, int rid, int pca, string cat, bool avi, bool res)
+        {
             this.TableID = tid;
-            this.ReservationStartTime = resstart;
-            this.ReservationEndTime = resend;
-            this.GroupName = group;  
+            this.TableQR = tqr;
+            this.RoomID = rid;
+            this.PersonCapacity = pca;
+            this.Category = cat;
+            this.Available = avi;
+            this.Reserable = res;
         }
     }
 }

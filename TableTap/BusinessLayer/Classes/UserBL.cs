@@ -5,6 +5,7 @@ using System.Web;
 using TableTap.DataAccessLayer;
 using TableTap.Models;
 
+
 namespace TableTap.BusinessLayer
 {
     public class UserBL
@@ -25,7 +26,15 @@ namespace TableTap.BusinessLayer
             return user;
         }
 
-   
+        public static void ProcessAddNewUser(UserModel user)
+        {
+            UserModel newUser = user;
+
+            UserDAL.AddNewUser(user);
+
+        }
+
+
 
     }
 }
