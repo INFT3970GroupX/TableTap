@@ -13,5 +13,10 @@ namespace TableTap.UL
         {
 
         }
+
+        protected void EditBuildingButton_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("AdminAddBuilding.aspx");
+        }
     }
 }
