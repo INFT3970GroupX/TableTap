@@ -9,10 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <input type="email" class="form-control" name="email" id="inEmail"  placeholder="Enter your Email" required="required" runat="server"/>
-            <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
+            
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
+            
         </div>
     </form>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 </body>
 </html>

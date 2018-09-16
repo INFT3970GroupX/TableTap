@@ -41,8 +41,10 @@ namespace TableTap.UL
             }
             else
             {
- //                              lblStatus.Text = "Email already registered";
-                              Initiate(fEmail);
+                  lblStatus.Text = "Email already registered";
+
+                Initiate(fEmail);
+
             }
 
 
