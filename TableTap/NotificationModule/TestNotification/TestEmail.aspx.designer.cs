@@ -7,81 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TableTap.UL {
+namespace TableTap.TestNotification {
     
     
-    public partial class Register {
+    public partial class TestEmail {
         
         /// <summary>
-        /// inFirstName control.
+        /// Subject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inFirstName;
+        protected global::System.Web.UI.WebControls.TextBox Subject;
         
         /// <summary>
-        /// inLastName control.
+        /// Message control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inLastName;
+        protected global::System.Web.UI.WebControls.TextBox Message;
         
         /// <summary>
-        /// inEmail control.
+        /// txb control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inEmail;
+        protected global::System.Web.UI.WebControls.TextBox txb;
         
         /// <summary>
-        /// inPassword control.
+        /// txbSubject control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inPassword;
+        protected global::System.Web.UI.WebControls.TextBox txbSubject;
         
         /// <summary>
-        /// inConfirmPassword control.
+        /// txbMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inConfirmPassword;
+        protected global::System.Web.UI.WebControls.TextBox txbMessage;
         
         /// <summary>
-        /// cvPsw control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvPsw;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// lblStatus control.
+        /// txbData control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.TextBox txbData;
         
         /// <summary>
-        /// registerButton control.
+        /// btnTest control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerButton;
+        protected global::System.Web.UI.WebControls.Button btnTest;
     }
 }

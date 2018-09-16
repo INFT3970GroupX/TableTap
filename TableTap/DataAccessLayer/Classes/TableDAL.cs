@@ -8,13 +8,41 @@ using System.Data;
 using System.Configuration;
 using System.Data.SqlClient;
 using TableTap.BusinessLayer.Classes;
+using TableTap.Models;
 
 namespace TableTap.DataAccessLayer.Classes
 {
     public class TableDAL
     {
+
+        public static void AddNewTable(TableModel table)
+        {
+            TableModel newTable = table;
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+
+
+               /* using (SqlCommand command = new SqlCommand(
+                "INSERT INTO tblTable (emailAddress, passcode, firstName, lastName, adminPermission) VALUES ("
+                    + "'" + newTable.Email.ToString() + "'" + ", "
+
+                    + ")"
+                    ,
+                    conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                conn.Close(); */
+            }
+
+        }
         //Add user with input strings from registration page
-        public void AddTable(string TableQR, int RoomID, int PersonCapacity, string Category, Boolean Reservable)
+        /*public void AddTable(string TableQR, int RoomID, int PersonCapacity, string Category, Boolean Reservable)
         {
             string DBConn;
             DBConn = ConfigurationManager.ConnectionStrings["udbTableTapConnectionString"].ConnectionString;
@@ -36,7 +64,8 @@ namespace TableTap.DataAccessLayer.Classes
                 }
 
             }
-        }
+        }*/
+
 
 
     }

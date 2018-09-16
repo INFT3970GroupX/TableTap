@@ -10,78 +10,60 @@
 namespace TableTap.UL {
     
     
-    public partial class Register {
+    public partial class AdminHome {
         
         /// <summary>
-        /// inFirstName control.
+        /// buildingButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inFirstName;
+        protected global::System.Web.UI.WebControls.Button buildingButton;
         
         /// <summary>
-        /// inLastName control.
+        /// roomButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inLastName;
+        protected global::System.Web.UI.WebControls.Button roomButton;
         
         /// <summary>
-        /// inEmail control.
+        /// tableButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inEmail;
+        protected global::System.Web.UI.WebControls.Button tableButton;
         
         /// <summary>
-        /// inPassword control.
+        /// userButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inPassword;
+        protected global::System.Web.UI.WebControls.Button userButton;
         
         /// <summary>
-        /// inConfirmPassword control.
+        /// addUserButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inConfirmPassword;
+        protected global::System.Web.UI.WebControls.Button addUserButton;
         
         /// <summary>
-        /// cvPsw control.
+        /// qrButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CompareValidator cvPsw;
-        
-        /// <summary>
-        /// lblStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
-        
-        /// <summary>
-        /// registerButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerButton;
+        protected global::System.Web.UI.WebControls.Button qrButton;
     }
 }

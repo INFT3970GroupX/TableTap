@@ -10,42 +10,42 @@
 namespace TableTap.UL {
     
     
-    public partial class Map {
+    public partial class AdminAddBuilding {
         
         /// <summary>
-        /// ImageMap1 control.
+        /// inBuildingName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageMap ImageMap1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inBuildingName;
         
         /// <summary>
-        /// bookTableBtn control.
+        /// inBuildingLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bookTableBtn;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inBuildingLabel;
         
         /// <summary>
-        /// buildingDropdown control.
+        /// inRoomQty control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList buildingDropdown;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inRoomQty;
         
         /// <summary>
-        /// goToBuildingButton control.
+        /// addButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button goToBuildingButton;
+        protected global::System.Web.UI.WebControls.Button addButton;
     }
 }

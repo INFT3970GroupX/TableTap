@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
+/// <summary>
+/// OBSELETE REFER TO USERBL IN DataAccessLayer/Classes
+/// </summary>
+
+
 namespace TableTap.BusinessLayer.Classes
 {
     //Instantiazation Method Class. Creates User with AddUser method.
@@ -20,7 +25,7 @@ namespace TableTap.BusinessLayer.Classes
 
         public void AddUser()
         {
-            UserDAL obj = new UserDAL();
+            UserDALkepler obj = new UserDALkepler();
             obj.AddUser(UserEmail, FirstName, LastName, UserPasscode);
         }
 

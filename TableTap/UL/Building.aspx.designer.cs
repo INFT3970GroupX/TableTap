@@ -10,42 +10,33 @@
 namespace TableTap.UL {
     
     
-    public partial class Map {
+    public partial class Building {
         
         /// <summary>
-        /// ImageMap1 control.
+        /// lblAboveDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageMap ImageMap1;
+        protected global::System.Web.UI.WebControls.Label lblAboveDropdown;
         
         /// <summary>
-        /// bookTableBtn control.
+        /// roomDropdown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button bookTableBtn;
+        protected global::System.Web.UI.WebControls.DropDownList roomDropdown;
         
         /// <summary>
-        /// buildingDropdown control.
+        /// goToRoomingButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList buildingDropdown;
-        
-        /// <summary>
-        /// goToBuildingButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button goToBuildingButton;
+        protected global::System.Web.UI.WebControls.Button goToRoomingButton;
     }
 }

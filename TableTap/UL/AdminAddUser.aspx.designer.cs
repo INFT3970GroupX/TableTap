@@ -10,52 +10,52 @@
 namespace TableTap.UL {
     
     
-    public partial class Register {
+    public partial class AdminAddUser {
         
         /// <summary>
-        /// inFirstName control.
+        /// inADFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inFirstName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inADFirstName;
         
         /// <summary>
-        /// inLastName control.
+        /// inADLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inLastName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inADLastName;
         
         /// <summary>
-        /// inEmail control.
+        /// inADEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl inADEmail;
         
         /// <summary>
-        /// inPassword control.
+        /// inADPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inADPassword;
         
         /// <summary>
-        /// inConfirmPassword control.
+        /// inADConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inConfirmPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword inADConfirmPassword;
         
         /// <summary>
         /// cvPsw control.
@@ -67,21 +67,21 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.CompareValidator cvPsw;
         
         /// <summary>
-        /// lblStatus control.
+        /// submitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblStatus;
+        protected global::System.Web.UI.WebControls.Button submitButton;
         
         /// <summary>
-        /// registerButton control.
+        /// lblconfirmation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button registerButton;
+        protected global::System.Web.UI.WebControls.Label lblconfirmation;
     }
 }
