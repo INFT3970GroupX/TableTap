@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using TableTap.DataAccessLayer;
 using TableTap.Models;
+using System.Configuration;
+
+
 
 
 namespace TableTap.BusinessLayer
@@ -59,6 +62,36 @@ namespace TableTap.BusinessLayer
             }
 
             return status;
+        }
+
+
+
+        //detects if email already exists in database (by contacting AdminUserEditCheck)
+        public static bool emailDuplicateCheck(string email)
+        {
+
+            bool exists;
+
+            List<String> listing = new List<string>();
+            try
+            {
+                listing = UserDAL.AdminUserEditCheck(email);
+
+                if(listing == null)
+                {
+                    exists = false;
+                }
+                else
+                {
+                    exists = true;
+                }
+            }
+            catch
+            {
+                exists = false;
+            }
+
+            return exists;
         }
 
 

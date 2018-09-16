@@ -65,13 +65,17 @@
 							</div>
 						</div>
 
-                        <!-- matching passwords validator-->
+                        <!-- matching passwords validator commented out due to issues-->
                         <asp:CompareValidator ID="cvPsw" runat="server"
                             ControlToValidate="inConfirmPassword"
                             ControlToCompare="inPassword" Display="Dynamic"
                             ErrorMessage="Email re-entry" ForeColor="Red">
                              Must match first password
                         </asp:CompareValidator><br />
+
+
+                        
+                        <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 
 						<div class="form-group ">
 							<asp:Button type="button" Text="Register" class="btn btn-primary btn-lg btn-block login-button" id="registerButton" onclick="registerButton_Click" runat="server" />

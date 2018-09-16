@@ -15,14 +15,52 @@ namespace TableTap.UL
         {
 
         }
+
+
+
+/// <summary>
+/// This contains email duplicate checking which has been disabled to to a bug, will return too when I have time - HAYDEN
+/// would be good if a new pair of eyes looked at this
+/// if the Initiate(fEmail) is disrupted in anyway there are major Jquery errors.
+/// </summary>
         protected void registerButton_Click(Object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            string fEmail = inEmail.Value.ToLower();
+
+            // calls external method returns bool true if email already in database
+            bool exists = BusinessLayer.UserBL.emailDuplicateCheck(fEmail);
+
+            if(exists == false)
             {
+
+                Initiate(fEmail);
+
+                    
+
+
+            }
+            else
+            {
+ //                              lblStatus.Text = "Email already registered";
+                              Initiate(fEmail);
+            }
+
+
+
+        }
+
+        protected void Initiate(string fEmail)
+        {
+
+
+          if (Page.IsValid)
+          {
+
+
 
                 UserModel newUser = new UserModel();
 
-                newUser.Email = inEmail.Value;
+                newUser.Email = fEmail;
                 newUser.Password = inPassword.Value;
                 newUser.FirstName = inFirstName.Value;
                 newUser.LastName = inLastName.Value;
@@ -35,13 +73,24 @@ namespace TableTap.UL
                 string phone = "nope";
 
 
-                NotifyBL.startAccountNotification(inEmail.Value, phone, inFirstName.Value, inLastName.Value);
+                NotifyBL.startAccountNotification(fEmail, phone, inFirstName.Value, inLastName.Value);
 
 
                 Response.Redirect("Home.aspx");
-            }
 
+
+          }                                                   
 
         }
+
+
+
+
+
+
+
+
+
+
     }
 }
