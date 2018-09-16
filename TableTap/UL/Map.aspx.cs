@@ -18,7 +18,7 @@ namespace TableTap.UL
         protected void Page_Load(object sender, EventArgs e) //created by beau
         {
             
-            goToBuildingButton.Text = ID.ToString();
+            
             buildings = BuildingBL.fillBuildingsList();
 
             if (!IsPostBack) //need this to stop it reverting to the top value every button click

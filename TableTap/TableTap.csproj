@@ -137,6 +137,7 @@
     <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
+    <Content Include="UL\Building.aspx" />
     <Content Include="UL\HaydenTestingPage.aspx" />
     <Content Include="UL\Home.aspx" />
     <Content Include="UL\Login.aspx" />
@@ -219,6 +220,7 @@
     <Compile Include="BusinessLayer\Classes\User.cs" />
     <Compile Include="BusinessLayer\Classes\UserBL.cs" />
     <Compile Include="DataAccessLayer\Classes\BuildingDAL.cs" />
+    <Compile Include="DataAccessLayer\Classes\RoomDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\TableDAL.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDALkepler.cs" />
     <Compile Include="DataAccessLayer\Classes\UserDAL.cs" />
@@ -304,6 +306,13 @@
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.designer.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\Building.aspx.cs">
+      <DependentUpon>Building.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\Building.aspx.designer.cs">
+      <DependentUpon>Building.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\HaydenTestingPage.aspx.cs">
       <DependentUpon>HaydenTestingPage.aspx</DependentUpon>
