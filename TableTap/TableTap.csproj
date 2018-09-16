@@ -137,6 +137,7 @@
     <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
+    <Content Include="UL\HaydenTestingPage.aspx" />
     <Content Include="UL\Home.aspx" />
     <Content Include="UL\Login.aspx" />
     <Content Include="UL\Logout.aspx" />
@@ -303,6 +304,13 @@
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.designer.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\HaydenTestingPage.aspx.cs">
+      <DependentUpon>HaydenTestingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\HaydenTestingPage.aspx.designer.cs">
+      <DependentUpon>HaydenTestingPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
