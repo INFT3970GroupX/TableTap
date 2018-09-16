@@ -19,13 +19,15 @@ SET LANGUAGE US_ENGLISH;
 DECLARE @CutoffDate DATE = DATEADD(YEAR, @NumberOfYears, @StartDate);
 
 -- this is just a holding table for intermediate calculations:
-DROP TABLE Dates
+DROP TABLE tblHours
+DROP TABLE tblDates
 
-CREATE TABLE Dates
+CREATE TABLE tblDates
 (
   [date]       DATE PRIMARY KEY, 
   [day]        AS DATEPART(DAY,      [date]),
   [month]      AS DATEPART(MONTH,    [date]),
+
   --FirstOfMonth AS CONVERT(DATE, DATEADD(MONTH, DATEDIFF(MONTH, 0, [date]), 0)),
   [MonthName]  AS DATENAME(MONTH,    [date]),
   --[week]       AS DATEPART(WEEK,     [date]),
@@ -38,9 +40,40 @@ CREATE TABLE Dates
   --Style101     AS CONVERT(CHAR(10),  [date], 101)
 );
 
+
+
+CREATE TABLE tblHours
+(
+	[date]			DATE PRIMARY KEY,
+	[00]			CHAR(50), 
+	[02]			CHAR,
+	[03]			CHAR,
+	[04]			CHAR,
+	[05]			CHAR,
+	[06]			CHAR,
+	[07]			CHAR,
+	[08]			CHAR,
+	[09]			CHAR,
+	[10]			CHAR,
+	[11]			CHAR,
+	[12]			CHAR,	
+	[13]			CHAR,
+	[14]			CHAR,
+	[15]			CHAR,
+	[16]			CHAR,
+	[17]			CHAR,
+	[18]			CHAR,
+	[19]			CHAR,
+	[20]			CHAR,
+	[21]			CHAR,
+	[22]			CHAR,
+	[23]			CHAR,
+
+  CONSTRAINT fk_GETDATE FOREIGN KEY (date) REFERENCES tblDates(date)
+);
 -- use the catalog views to generate as many rows as we need
 
-INSERT dates([date]) 
+INSERT INTO tbldates([date]) 
 SELECT d
 FROM
 (
@@ -56,5 +89,22 @@ FROM
   ) AS x
 ) AS y;
 
-SELECT *
-FROM Dates;
+INSERT INTO tblHours (date)
+SELECT date 
+FROM tblDates
+
+--UPDATE tblHours
+--SET [00] ='test'
+--WHERE [date] = '2018-09-14';
+
+
+
+
+
+go
+
+
+SELECT * FROM tblHours;
+
+SELECT * FROM tblDates;
+
