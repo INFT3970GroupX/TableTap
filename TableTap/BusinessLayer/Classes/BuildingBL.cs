@@ -16,5 +16,15 @@ namespace TableTap.BusinessLayer.Classes
             BuildingDAL.AddNewBuilding(newBuilding);
 
         }
+
+        public static List<BuildingModel> fillBuildingsList()
+        {
+            List<BuildingModel> buildings = new List<BuildingModel>();
+
+            buildings = BuildingDAL.loadBuildingList();
+
+            return buildings;
+        }
+
     }
 }
