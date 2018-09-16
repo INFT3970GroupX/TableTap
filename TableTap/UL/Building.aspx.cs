@@ -16,8 +16,10 @@ namespace TableTap.UL
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             int ID = Int32.Parse(Request.QueryString["ID"]);
-            rooms = RoomBL.fillRoomsList();
+
+            rooms = RoomBL.fillRoomsList(ID);
 
             if (!IsPostBack) //need this to stop it reverting to the top value every button click
             {
@@ -25,6 +27,12 @@ namespace TableTap.UL
                 roomDropdown.DataValueField = "RoomID";
                 roomDropdown.DataTextField = "RoomName";
                 roomDropdown.DataBind();
+            }
+
+            if (roomDropdown.Items.Count < 1)
+            {
+                lblAboveDropdown.Text = "No rooms currently available";
+                roomDropdown.Visible = false;
             }
         }
 

@@ -10,7 +10,7 @@ namespace TableTap.DataAccessLayer.Classes
 {
     public class RoomDAL
     {
-        public static List<RoomModel> loadRoomList()
+        public static List<RoomModel> loadRoomList(int id)
         {
             List<RoomModel> rooms = new List<RoomModel>();
 
@@ -21,7 +21,7 @@ namespace TableTap.DataAccessLayer.Classes
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT * FROM tblRoom",
+                    "SELECT * FROM tblRoom WHERE buildingID=" + id.ToString(),
                     conn))
                 {
                     SqlDataReader dr = command.ExecuteReader();

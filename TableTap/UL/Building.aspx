@@ -7,7 +7,7 @@
             <h2> Room list</h2>
 
             <div class="form-group">
-					<label for="name" class="cols-sm-2 control-label">Select Building:</label>
+                    <asp:Label runat="server" ID="lblAboveDropdown" class="cols-sm-2 control-label" text="Select Room:"></asp:Label>
 					<div class="cols-sm-10">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
