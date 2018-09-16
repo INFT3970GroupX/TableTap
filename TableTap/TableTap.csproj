@@ -90,6 +90,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BusinessLayer\JavaScript\jquery.webcam.js" />
+    <Content Include="BusinessLayer\JavaScript\jquery.webcam.min.js" />
+    <Content Include="BusinessLayer\JavaScript\jscam.swf" />
     <Content Include="BusinessLayer\JavaScript\photo.js" />
     <Content Include="CSS\Map.css" />
     <Content Include="Images\Room1.png" />

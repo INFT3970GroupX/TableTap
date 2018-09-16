@@ -13,6 +13,24 @@ namespace TableTap.UL {
     public partial class Scan {
         
         /// <summary>
+        /// imgCapture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgCapture;
+        
+        /// <summary>
+        /// btnCapture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCapture;
+        
+        /// <summary>
         /// btnReserve control.
         /// </summary>
         /// <remarks>

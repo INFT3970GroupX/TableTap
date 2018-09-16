@@ -39,7 +39,7 @@ namespace TableTap.UL
             img.Save(Response.OutputStream, System.Drawing.Imaging.ImageFormat.Png);
 
             //Change to your own location if you want to store a copy-- not needed
-            img.Save("E:\\Users\\Desktop\\LastQRCodeCreated.png", ImageFormat.Png);
+            img.Save("C:\\Users\\kepst\\Desktop\\LastQRCodeCreated.png", ImageFormat.Png);
             QRImage.ImageUrl = "LastQRCodeCreated.png";
         }
     }
