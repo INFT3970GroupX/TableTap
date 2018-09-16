@@ -27,6 +27,9 @@ namespace TableTap.UL
             Label3.Text = IDstring.Replace("?=ID", "");
 
             Label1.Text = baseUrl;
+
+
+
         }
     }
 }
