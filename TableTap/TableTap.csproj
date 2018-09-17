@@ -149,6 +149,7 @@
     <Content Include="UL\Map.aspx" />
     <Content Include="UL\QRtest.aspx" />
     <Content Include="UL\Register.aspx" />
+    <Content Include="UL\Room.aspx" />
     <Content Include="UL\Scan.aspx" />
     <Content Include="UL\Site.Master" />
     <None Include="Properties\Settings.settings">
@@ -373,6 +374,13 @@
     </Compile>
     <Compile Include="UL\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\Room.aspx.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\Room.aspx.designer.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\Scan.aspx.cs">
       <DependentUpon>Scan.aspx</DependentUpon>
