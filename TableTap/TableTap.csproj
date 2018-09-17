@@ -133,6 +133,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="NotificationModule\TestNotification\TestEmail.aspx" />
     <Content Include="NotificationModule\TestNotification\TestTwilio.aspx" />
+    <Content Include="Seats.js" />
     <Content Include="UL\Account.aspx" />
     <Content Include="UL\AdminAddBuilding.aspx" />
     <Content Include="UL\AdminAddUser.aspx" />

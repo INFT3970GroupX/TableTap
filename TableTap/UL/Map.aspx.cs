@@ -44,5 +44,10 @@ namespace TableTap.UL
             // Response.Redirect("Building.aspx?id=" + id);
 
         }
+
+        protected void bookTableBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
