@@ -21,10 +21,9 @@ namespace TableTap.UL
         protected void Button1_Click1(object sender, EventArgs e)
         {
             string IDnumber = "?=ID10008";
-            StringWriter writer = new StringWriter();
-            Server.UrlEncode(IDnumber, writer);
-            String EncodedString = writer.ToString();
             Response.Redirect("HaydenTestingPageURLIN.aspx" + IDnumber);
+
+            //<add name="ConnectionString" connectionString="Data Source=ORBIT1\SQLSERVER;Initial Catalog=udbTableTap;Integrated Security=False;User ID=etableTap;Password=123" providerName="System.Data.SqlClient" />
 
         }
 

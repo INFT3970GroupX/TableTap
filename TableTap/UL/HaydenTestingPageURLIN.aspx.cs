@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -27,6 +28,11 @@ namespace TableTap.UL
             Label3.Text = IDstring.Replace("?=ID", "");
 
             Label1.Text = baseUrl;
+
+
+            // Gets public IP Address
+
+            Label4.Text = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
 
 
 
