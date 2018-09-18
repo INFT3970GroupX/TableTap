@@ -151,11 +151,12 @@ namespace TableTap.BusinessLayer
         /// <returns></returns>
         public static void userDelete(int userID)
         {
+
             UserDAL.deleteUser(userID);
             /*bool success;
             try
             {
-                UserDAL.deleteUser(userID);
+                
                 return success = true;
             }
             catch

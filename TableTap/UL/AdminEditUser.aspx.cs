@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TableTap.BusinessLayer;
 using TableTap.Models;
+using TableTap.DataAccessLayer; //REMOVE
 
 
 
@@ -18,30 +19,7 @@ namespace TableTap.UL
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-               /* if (record == null)
-                {
-                    lblStatus.Text = "User not found, please try again";
-                }
-                else if (!IsPostBack)
-                {
-                    lblUserID.Text = record[0];
-                    Email.Value = record[1];
-                    inPassword.Value = record[2];
-                    inFirstName.Value = record[3];
-                    inLastName.Value = record[4];
 
-                    if (record[5] != "0")
-                    {
-                        chkAdmin.Checked = true;
-                    }
-                    else
-                    {
-                        chkAdmin.Checked = false;
-                    }
-
-                
-            }*/
         }
         protected void searchButton_Click(Object sender, EventArgs e)
         {
@@ -99,7 +77,8 @@ namespace TableTap.UL
                 record.Add("False");
             }
 
-           bool success = UserBL.PassInModifyString(record);
+            bool success = true;
+            UserDAL.modifyUser(record); //REMOVE
 
             if (success == false)
             {
@@ -114,15 +93,12 @@ namespace TableTap.UL
 
         protected void deleteButton_Click(Object sender, EventArgs e)
         {
+            UserModel deleteUser = new UserModel();
 
-            
-                
-                
-                UserBL.userDelete(Int32.Parse(lblUserID.Text));
-
-                Response.Redirect("AdminHome.aspx");
-            
-           
+            deleteUser.UserID = (Int32.Parse(lblUserID.Text));
+            UserBL.userDelete(deleteUser.UserID);
+            Response.Redirect("AdminHome.aspx");
+            // bool success = 
             /*
             if (success == false)
             {
@@ -143,6 +119,11 @@ namespace TableTap.UL
 
         protected void myButton_Click(Object sender, EventArgs e)
         {
+
+            UserModel deleteUser = new UserModel();
+
+            deleteUser.UserID = (Int32.Parse(lblUserID.Text));
+            UserBL.userDelete(deleteUser.UserID);
             Response.Redirect("AdminHome.aspx");
         }
     }

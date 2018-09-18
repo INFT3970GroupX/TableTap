@@ -274,6 +274,7 @@ namespace TableTap.DataAccessLayer
         /// </summary>
         public static void deleteUser(int UserID)
         {
+
             /*
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             SqlCommand modify = new SqlCommand();
