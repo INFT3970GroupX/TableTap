@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TableTap.BusinessLayer;
+using TableTap.DataAccessLayer;
 
 
 
@@ -71,7 +72,8 @@ namespace TableTap.UL
                 record.Add("False");
             }
 
-           bool success = UserBL.PassInModifyString(record);
+            bool success = true;
+            UserDAL.modifyUser(record);
 
             if (success == false)
             {
@@ -86,7 +88,9 @@ namespace TableTap.UL
 
         protected void deleteButton_Click(Object sender, EventArgs e)
         {
-            bool success = UserBL.userDelete(lblLUserID.Text);
+            bool success = true;
+            UserDAL.deleteUser(lblLUserID.Text);
+
 
             if (success == false)
             {

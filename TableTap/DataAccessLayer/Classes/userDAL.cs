@@ -274,15 +274,14 @@ namespace TableTap.DataAccessLayer
         /// </summary>
         public static void deleteUser(string UserID)
         {
-        
+            string query = "DELETE FROM tblUser " + "WHERE userID=" + "'" + UserID + "'";
+
+
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                SqlCommand modify = new SqlCommand();
-                SqlDataReader reader;
-                modify.CommandText = "DELETE FROM tblUser " + "WHERE userID=" + "'" + UserID + "'";
-                modify.CommandType = System.Data.CommandType.Text;
-                modify.Connection = conn;
+                SqlCommand modify = new SqlCommand(query, conn);
+
                 conn.Open();
-                reader = modify.ExecuteReader();
+                modify.ExecuteNonQuery();
 
                 conn.Close();
 

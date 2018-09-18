@@ -149,18 +149,18 @@ namespace TableTap.BusinessLayer
         /// </summary>
         /// <param name="userID"></param>
         /// <returns></returns>
-        public static bool userDelete(string userID)
+        public static void userDelete(string userID)
         {
-            bool success;
-            try
-            {
+ //           bool success;
+  //          try
+  //          {
                 UserDAL.deleteUser(userID);
-                return success = true;
-            }
-            catch
-            {
-                return success = false;
-            }
+   //             return success = true;
+  //          }
+  //          catch
+  //          {
+   //             return success = false;
+     //       }
         }
 
 
