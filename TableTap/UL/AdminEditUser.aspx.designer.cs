@@ -310,6 +310,15 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.Button deleteButton;
         
         /// <summary>
+        /// deleteButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button deleteButton2;
+        
+        /// <summary>
         /// cancelButton control.
         /// </summary>
         /// <remarks>
@@ -317,5 +326,14 @@ namespace TableTap.UL {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cancelButton;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using TableTap.BusinessLayer;
+using TableTap.Models;
 
 
 
@@ -12,9 +13,35 @@ namespace TableTap.UL
 {
     public partial class AdminEditUser : System.Web.UI.Page
     {
+
+        //List<string> record = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+               /* if (record == null)
+                {
+                    lblStatus.Text = "User not found, please try again";
+                }
+                else if (!IsPostBack)
+                {
+                    lblUserID.Text = record[0];
+                    Email.Value = record[1];
+                    inPassword.Value = record[2];
+                    inFirstName.Value = record[3];
+                    inLastName.Value = record[4];
 
+                    if (record[5] != "0")
+                    {
+                        chkAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        chkAdmin.Checked = false;
+                    }
+
+                
+            }*/
         }
         protected void searchButton_Click(Object sender, EventArgs e)
         {
@@ -24,6 +51,7 @@ namespace TableTap.UL
             }
             else
             {
+
                 List<string> record = new List<string>();
 
                 record = UserBL.passUserSearch(txbUsername.Value);
@@ -86,8 +114,16 @@ namespace TableTap.UL
 
         protected void deleteButton_Click(Object sender, EventArgs e)
         {
-            bool success = UserBL.userDelete(lblLUserID.Text);
 
+            
+                
+                
+                UserBL.userDelete(Int32.Parse(lblUserID.Text));
+
+                Response.Redirect("AdminHome.aspx");
+            
+           
+            /*
             if (success == false)
             {
                 lblSaveStatus.Text = "Failed";
@@ -97,9 +133,15 @@ namespace TableTap.UL
                 lblSaveStatus.Text = "Deleted";
                 Response.Redirect("AdminEditUser.aspx");
             }
+            */
         }
 
         protected void cancelButton_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("AdminHome.aspx");
+        }
+
+        protected void myButton_Click(Object sender, EventArgs e)
         {
             Response.Redirect("AdminHome.aspx");
         }

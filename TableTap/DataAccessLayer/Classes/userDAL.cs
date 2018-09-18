@@ -272,21 +272,35 @@ namespace TableTap.DataAccessLayer
         /// <summary>
         /// deletes user associated with userID
         /// </summary>
-        public static void deleteUser(string UserID)
+        public static void deleteUser(int UserID)
         {
-        
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
-                SqlCommand modify = new SqlCommand();
-                SqlDataReader reader;
-                modify.CommandText = "DELETE FROM tblUser " + "WHERE userID=" + "'" + UserID + "'";
-                modify.CommandType = System.Data.CommandType.Text;
-                modify.Connection = conn;
+            /*
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlCommand modify = new SqlCommand();
+            SqlDataReader reader;
+            modify.CommandText = "DELETE FROM tblUser " + "WHERE userID=" + "'" + UserID + "'";
+            modify.CommandType = System.Data.CommandType.Text;
+            modify.Connection = conn;
+            conn.Open();
+            reader = modify.ExecuteReader();
+
+            conn.Close();
+            */
+            UserModel newUser = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            
+            using (conn)
+            {
                 conn.Open();
-                reader = modify.ExecuteReader();
-
+                using (SqlCommand command = new SqlCommand(
+                "DELETE FROM tblUser WHERE userID=" + UserID.ToString(), conn))
+                {
+                    command.ExecuteNonQuery();
+                }
                 conn.Close();
+            }
 
-        
         }
 
 
