@@ -133,6 +133,7 @@
     <Content Include="Scripts\jquery-3.0.0.min.map" />
     <Content Include="NotificationModule\TestNotification\TestEmail.aspx" />
     <Content Include="NotificationModule\TestNotification\TestTwilio.aspx" />
+    <Content Include="Seats.js" />
     <Content Include="UL\Account.aspx" />
     <Content Include="UL\AdminAddBuilding.aspx" />
     <Content Include="UL\AdminAddUser.aspx" />
@@ -149,6 +150,7 @@
     <Content Include="UL\Map.aspx" />
     <Content Include="UL\QRtest.aspx" />
     <Content Include="UL\Register.aspx" />
+    <Content Include="UL\Room.aspx" />
     <Content Include="UL\Scan.aspx" />
     <Content Include="UL\Site.Master" />
     <None Include="Properties\Settings.settings">
@@ -204,6 +206,7 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="UL\Table.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -374,6 +377,13 @@
     <Compile Include="UL\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UL\Room.aspx.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\Room.aspx.designer.cs">
+      <DependentUpon>Room.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UL\Scan.aspx.cs">
       <DependentUpon>Scan.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,6 +397,13 @@
     </Compile>
     <Compile Include="UL\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UL\Table.aspx.cs">
+      <DependentUpon>Table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\Table.aspx.designer.cs">
+      <DependentUpon>Table.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

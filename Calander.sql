@@ -19,7 +19,8 @@ SET LANGUAGE US_ENGLISH;
 DECLARE @CutoffDate DATE = DATEADD(YEAR, @NumberOfYears, @StartDate);
 
 -- this is just a holding table for intermediate calculations:
-DROP TABLE tblHours
+
+DROP TABLE tblStatus
 DROP TABLE tblDates
 
 CREATE TABLE tblDates
@@ -40,11 +41,10 @@ CREATE TABLE tblDates
   --Style101     AS CONVERT(CHAR(10),  [date], 101)
 );
 
-
-
-CREATE TABLE tblHours
+CREATE TABLE tblStatus
 (
-	[date]			DATE PRIMARY KEY,
+	[statusID]		INT IDENTITY(0001,1) PRIMARY KEY,
+	[date]			DATE,
 	[00]			CHAR(50), 
 	[02]			CHAR,
 	[03]			CHAR,
@@ -89,22 +89,15 @@ FROM
   ) AS x
 ) AS y;
 
-INSERT INTO tblHours (date)
+INSERT INTO tblStatus (date)
 SELECT date 
 FROM tblDates
 
---UPDATE tblHours
---SET [00] ='test'
---WHERE [date] = '2018-09-14';
-
-
-
-
-
+UPDATE tblStatus
+SET [00] ='test'
+WHERE [date] = '2018-09-14';
 go
 
-
-SELECT * FROM tblHours;
-
+SELECT * FROM tblStatus;
 SELECT * FROM tblDates;
 

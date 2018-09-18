@@ -1,5 +1,60 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/UL/Site.Master" AutoEventWireup="true" CodeBehind="Map.aspx.cs" Inherits="TableTap.UL.Map" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
+<style>  
+#holder{    
+height:200px;    
+width:550px;
+background-color:#F5F5F5;
+border:1px solid #A4A4A4;
+margin-left:10px;   
+}
+#place {
+position:relative;
+margin:7px;
+}
+#place a{
+font-size:0.6em;
+}
+#place li
+{
+ list-style: none outside none;
+ position: absolute;   
+}    
+#place li:hover
+{
+background-color:yellow;      
+} 
+#place .seat{
+background-color:blue;
+height:33px;
+width:33px;
+display:block;   
+}
+#place .selectedSeat
+{ 
+    background-color:green;
+
+}
+#place .selectingSeat
+{ background-color:grey;
+
+}
+#place .row-3, #place .row-4{
+margin-top:10px;
+}
+#seatDescription li{
+verticle-align:middle;    
+list-style: none outside none;
+padding-left:35px;
+height:35px;
+float:left;
+}
+    .auto-style1 {
+        width: 109px;
+    }
+</style>
+    <script src="/Seats.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     Detter er map side
@@ -9,23 +64,24 @@
 <h2> Choose a room or table by clicking the corresponding options in the layout below:</h2>
     <div id="holder"> 
         <ul  id="place">
-            <asp:ImageMap ID="ImageMap1" runat="server" Height="220px" ImageUrl="~/Images/Room1.png"
-                Width="420px">
-
-                
-            </asp:ImageMap>
         </ul>    
     </div>
     <div style="float:left;"> 
     <ul id="tableDescription">
-        <li style="background:url('Images/Room1.png') no-repeat scroll 0 0 transparent;">Available Table</li>
-        <li style="background:url('images/Room1.png') no-repeat scroll 0 0 transparent;">Booked Table</li>
-        <li style="background:url('images/Room1.png') no-repeat scroll 0 0 transparent;">Selected Table</li>
+        <li style="background-color:blue" class="auto-style1">Available Table</li>
+        <li style="background-color:red">Booked Table</li>
+        <li style="background-color:green" opacity: 1;>Selected Table</li>
     </ul>
     </div>
+            <div style="clear:both;width:100%">
+              
+        </div>
         <div style="clear:both;width:100%">
         &nbsp;           
-        <asp:Button ID="bookTableBtn" runat="server" Text="Book Table" />
+        <asp:Button ID="bookTableBtn" runat="server" Text="Book Table" OnClick="bookTableBtn_Click" />
+            <br />
+
+            <asp:TextBox ID="roomTxtBx" runat="server"></asp:TextBox>
         </div>
         </div>
 

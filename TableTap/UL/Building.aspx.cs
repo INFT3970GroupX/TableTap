@@ -34,8 +34,11 @@ namespace TableTap.UL
                 lblAboveDropdown.Text = "No rooms currently available";
                 roomDropdown.Visible = false;
                 goToRoomingButton.Visible = false;
+<<<<<<< HEAD
 
                 //show room timetables
+=======
+>>>>>>> 70d9e682aaa281a43e9682b7643737e9b4211052
             }
         }
 

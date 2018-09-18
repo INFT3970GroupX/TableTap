@@ -10,7 +10,7 @@ namespace TableTap.Models
 
         public int TableID { get; set; }
 
-        public string TableQR { get; set; }
+        //public string TableQR { get; set; }
 
         public int RoomID { get; set; }
 
@@ -18,9 +18,9 @@ namespace TableTap.Models
 
         public string Category { get; set; }
 
-        public bool Available { get; set; }
+        //public bool Available { get; set; }
 
-        public bool Reserable { get; set; }
+        //public bool Reserable { get; set; }
 
         public TableModel()
         {
@@ -30,12 +30,12 @@ namespace TableTap.Models
         public TableModel(int tid, string tqr, int rid, int pca, string cat, bool avi, bool res)
         {
             this.TableID = tid;
-            this.TableQR = tqr;
+            //this.TableQR = tqr;
             this.RoomID = rid;
             this.PersonCapacity = pca;
             this.Category = cat;
-            this.Available = avi;
-            this.Reserable = res;
+            //this.Available = avi;
+            //this.Reserable = res;
         }
     }
 }

@@ -65,7 +65,39 @@ namespace TableTap.DataAccessLayer.Classes
 
             }
         }*/
+        public static List<TableModel> loadTableList(int id)
+        {
+            List<TableModel> tables = new List<TableModel>();
 
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblTable WHERE tableID=" + id.ToString(),
+                    conn))
+                {
+                    SqlDataReader dr = command.ExecuteReader();
+                    TableModel table;
+                    while (dr.Read())
+                    {
+                        table = new TableModel();
+                        table.TableID = Convert.ToInt32(dr["tableID"]);
+                        table.RoomID = Convert.ToInt32(dr["tableID"]);
+                        table.PersonCapacity = Convert.ToInt32(dr["personCapacity"]);
+                        table.Category = dr["category"].ToString();
+
+                        tables.Add(table);
+                    }
+                    dr.Close();
+                }
+                conn.Close();
+            }
+
+            return tables;
+        }
 
 
     }
