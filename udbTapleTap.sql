@@ -1,6 +1,9 @@
 --CANNOT DROP DATABASE PROPERLY
 use master
 go
+---Kills any existing DB sessions (Fixes drop issue) - HAYDEN: REMOVE IF YOUR DB BROKE
+ALTER DATABASE udbTableTap SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 
 IF EXISTS(select * from sys.databases where name='udbTableTap')
 DROP DATABASE udbTableTap
