@@ -59,17 +59,17 @@ CREATE TABLE tblUser (
 	adminPermission	BIT NOT NULL DEFAULT 0
 	)
 
-CREATE TABLE tblReservation (
-	reservationID	INT IDENTITY(00001,1) PRIMARY KEY,
-	userID			INT NOT NULL,
-	tableID			INT NOT NULL,
-	reservationStartTime	DATETIME NOT NULL,
-	reservationFinishTime	DATETIME NOT NULL,
-	groupName				NVARCHAR(50) NOT NULL,
-
-	CONSTRAINT fk_ReserverID FOREIGN KEY (userID) REFERENCES tblUser(userID),
-	CONSTRAINT fk_ReservedTable FOREIGN KEY (tableID) REFERENCES tblTable(tableID)
-	)
+--CREATE TABLE tblReservation (
+--	reservationID	INT IDENTITY(00001,1) PRIMARY KEY,
+--	userID			INT NOT NULL,
+--	tableID			INT NOT NULL,
+--	reservationStartTime	DATETIME NOT NULL,
+--	reservationFinishTime	DATETIME NOT NULL,
+--	groupName				NVARCHAR(50) NOT NULL,
+--
+--	CONSTRAINT fk_ReserverID FOREIGN KEY (userID) REFERENCES tblUser(userID),
+--	CONSTRAINT fk_ReservedTable FOREIGN KEY (tableID) REFERENCES tblTable(tableID)
+--	)
 
 CREATE TABLE tblSession (
 	sessionID		INT IDENTITY(000000001, 1) PRIMARY KEY,
@@ -120,10 +120,10 @@ VALUES ('kepler@uon.edu.au', 'password1', 'Kepler', 'Manu', 0),
 ('michael@uon.edu.au', 'password3', 'Michael', NULL, 0)
 go
 
-INSERT INTO tblReservation(userID, tableID, reservationStartTime, reservationFinishTime, groupName)
-VALUES (100001, 1, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Keplers group, INFT3970'),
-(100003, 3, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Michaels group, INFT3960')
-go
+--INSERT INTO tblReservation(userID, tableID, reservationStartTime, reservationFinishTime, groupName)
+--VALUES (100001, 1, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Keplers group, INFT3970'),
+--(100003, 3, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Michaels group, INFT3960')
+--go
 
 INSERT INTO tblSession(tableID, sessionStartTime, sessionFinishTime, sessionName)
 VALUES (2, '2018-09-16 12:00:00', '2018-09-16 15:20:02', 'Beau'), 
