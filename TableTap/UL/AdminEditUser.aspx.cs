@@ -4,8 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-/// REMOVE
-using TableTap.DataAccessLayer;
+using TableTap.BusinessLayer;
+
 
 
 namespace TableTap.UL
@@ -26,8 +26,7 @@ namespace TableTap.UL
             {
                 List<string> record = new List<string>();
 
-                /// REDIRECT VIA BL LAYER
-                record = UserDAL.AdminUserEditCheck(txbUsername.Value);
+                record = UserBL.passUserSearch(txbUsername.Value);
 
                 if(record == null)
                 {
@@ -56,7 +55,53 @@ namespace TableTap.UL
 
         protected void saveButton_Click(Object sender, EventArgs e)
         {
+            List<string> record = new List<string>();
 
+            record.Add(lblLUserID.Text);
+            record.Add(Email.Value);
+            record.Add(inFirstName.Value);
+            record.Add(inLastName.Value);
+
+            if(chkAdmin.Checked == true)
+            {
+                record.Add("True");
+            }
+            else
+            {
+                record.Add("False");
+            }
+
+           bool success = UserBL.PassInModifyString(record);
+
+            if (success == false)
+            {
+                lblSaveStatus.Text = "Save failed";
+            }
+            else
+            {
+                lblSaveStatus.Text = "Saved";
+            }
+
+        }
+
+        protected void deleteButton_Click(Object sender, EventArgs e)
+        {
+            bool success = UserBL.userDelete(lblLUserID.Text);
+
+            if (success == false)
+            {
+                lblSaveStatus.Text = "Failed";
+            }
+            else
+            {
+                lblSaveStatus.Text = "Deleted";
+                Response.Redirect("AdminEditUser.aspx");
+            }
+        }
+
+        protected void cancelButton_Click(Object sender, EventArgs e)
+        {
+            Response.Redirect("AdminHome.aspx");
         }
     }
 }

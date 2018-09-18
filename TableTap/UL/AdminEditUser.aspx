@@ -7,6 +7,7 @@
              <div class="row main">
 				
 				<div class="main-login main-center">
+                                               
 					<form class="form-horizontal" method="post" action="#">
                         <div class="panel-heading">
 	                        <div class="panel-title text-center">
@@ -20,11 +21,12 @@
                             <input type="email" class="form-control" name="username" id="txbUsername" runat="server"  placeholder="Enter email"/>
                             <asp:Label ID="lblStatus" runat="server" Text=""></asp:Label>
 							<asp:Button type="button" Text="Search" class="btn btn-primary btn-lg btn-block login-button" id="searchButton" onclick="searchButton_Click" runat="server" />
-						</div>
 
+						</div>
+                        
 					</form>
 
-
+                    <br />
 
                     <form class="form-horizontal" method="post" action="#">
 
@@ -67,7 +69,7 @@
                          <asp:Label ID="lbl" runat="server" Text="Password"></asp:Label>
                      </asp:TableCell>
                      <asp:TableCell runat="server">
-                         <input type="text" class="form-control" name="password" id="inPassword"  placeholder="Password"  runat="server"/>
+                         <input type="text" required="required" class="form-control" name="password" id="inPassword"  placeholder="Password"  runat="server"/>
                   
                     </asp:TableCell>
 
@@ -79,7 +81,7 @@
                            <asp:Label ID="Label2" runat="server" Text="Firstname"></asp:Label>
                        </asp:TableCell>
                       <asp:TableCell runat="server">
-                           <input type="text" class="form-control" name="name" id="inFirstName"  placeholder="Firstname" runat="server"/>
+                           <input type="text" required="required" class="form-control" name="name" id="inFirstName"  placeholder="Firstname" runat="server"/>
                   
                        </asp:TableCell>
 
@@ -91,7 +93,7 @@
                          <asp:Label ID="Label3" runat="server" Text="Surname"></asp:Label>
                      </asp:TableCell>
                      <asp:TableCell runat="server">
-                           <input type="text" class="form-control" name="name" id="inLastName"  placeholder="Surname" runat="server"/>
+                           <input type="text" required="required" class="form-control" name="name" id="inLastName"  placeholder="Surname" runat="server"/>
                   
                       </asp:TableCell>
 
@@ -115,10 +117,27 @@
 
 
                  </asp:Table>
+                        <br />
 
                         <asp:Button type="button" Text="Save" class="btn btn-primary btn-lg btn-block login-button" id="saveButton" onclick="saveButton_Click" runat="server" />
-                 
-                 </form>
+           
+                        <asp:Label ID="lblSaveStatus" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
+                    </form>
+                         <br />
 
+                         <form class="form-horizontal" method="post" action="#">
+
+                            <asp:Button type="button" Text="Delete" class="btn btn-primary btn-lg btn-block login-button" ID="deleteButton" onclick="deleteButton_Click" runat="server" />
+                             
+                            
+
+                         </form>
+                         <br />
+                    <asp:Button type="button" Text="Cancel" class="btn btn-primary btn-lg btn-block login-button" ID="cancelButton" onclick="cancelButton_Click" runat="server" />
+                     
+                    </div>
+                 </div>
+            </div>
+        </div>
 
 </asp:Content>
