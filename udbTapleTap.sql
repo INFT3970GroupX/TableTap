@@ -21,7 +21,7 @@ CREATE TABLE tblBuilding (
 	buildingLabel	NVARCHAR(10) NOT NULL,
 	buildingName	NVARCHAR(50) NOT NULL,
 	roomQty			SMALLINT NOT NULL,
-	buildingMap		IMAGE --temporarily Null since we haven't figured out how we're gonna make it interactive
+	--buildingMap		IMAGE --temporarily Null since we haven't figured out how we're gonna make it interactive
 	)
 
 CREATE TABLE tblRoom (
@@ -108,7 +108,8 @@ VALUES ('Auchmuty Information Common', 'L-266', 001, '00:00:00', '23:59:59', 100
 ('Bedroom', 'Bed', 004, '08:00:00', '22:00:00', 2),
 ('Bathroom', 'WC', 004, '08:00:00', '22:00:00', 2),
 ('Både', 'b2', 005, '08:00:00', '22:00:00', 4),
-('Både', 'b1', 005, '08:00:00', '22:00:00', 4)
+('Både', 'b1', 005, '08:00:00', '22:00:00', 4),
+('Flower Room', 'FR', 001, '00:00:00', '23:59:59', 100)
 go
 
 --INSERT INTO tblTable(tableQR, roomID, personCapacity, category, reservable)
@@ -191,6 +192,7 @@ CREATE TABLE tblStatus
 	[tableID]		INT,
 	[date]			DATE,
 	[hour00]			CHAR(50), 
+	[hour01]			CHAR,
 	[hour02]			CHAR,
 	[hour03]			CHAR,
 	[hour04]			CHAR,
@@ -200,8 +202,8 @@ CREATE TABLE tblStatus
 	[hour08]			CHAR,
 	[hour09]			CHAR,
 	[hour10]			CHAR,
-	[hour11]			CHAR,
-	[hour12]			CHAR,	
+	[hour11]			CHAR,	
+	[hour12]			CHAR,
 	[hour13]			CHAR,
 	[hour14]			CHAR,
 	[hour15]			CHAR,
@@ -253,7 +255,7 @@ FROM
 --left JOIN tblStatus ts on (d.date = ts.date)
 --left JOIN tblStatus t on (ts.tableID = t.tableID)
 DECLARE @i int = 0
-WHILE @i < COL_LENGTH ( 'tblTable' , 'TableID')
+WHILE @i <= (SELECT Count(tableID) FROM  tblTable ) 
 BEGIN
 INSERT INTO tblStatus(tableID, date) 
 select t.TableID, d.date 
@@ -279,4 +281,5 @@ END
 --go
 
 SELECT * FROM tblStatus;
-SELECT COUNT(statusID) FROM tblStatus;
+SELECT TableID FROM tblTable;
+SELECT COUNT (TableID) FROM tblTable;
