@@ -17,5 +17,14 @@ namespace TableTap.BusinessLayer.Classes
 
             return buildings;
         }
+
+        public static bool checkTableStatus(int id)
+        {
+            
+            
+            bool check = TableDAL.checkTableStatus(id);
+
+            return check;
+        }
     }
 }

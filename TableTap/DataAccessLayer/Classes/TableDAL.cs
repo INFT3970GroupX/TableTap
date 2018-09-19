@@ -99,6 +99,44 @@ namespace TableTap.DataAccessLayer.Classes
             return tables;
         }
 
+        public static bool checkTableStatus(int id)
+        {
+            bool hasData = false; //for testing purpuses
+            string sTest = "0";
 
+
+            DateTime dateNow = DateTime.Now;
+            string hour = dateNow.ToString("HH");
+            //string date = dateNow.ToString("yyyy-MM-d");
+            string date = dateNow.ToString("dd-MM-yyyy");
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT " + hour + " FROM tblStatus WHERE tableID=" + "'" + id.ToString() + ", date=" + "'" + date + "'",
+                    conn))
+                
+                {
+                    SqlDataReader dr = command.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                        sTest = dr[dateNow.ToString("mm")].ToString();
+                    }
+                    dr.Close();
+                }
+                conn.Close();
+            }
+
+            if (sTest != "0")
+            {
+                hasData = true;
+            }
+
+            return hasData;
+        }
     }
 }
