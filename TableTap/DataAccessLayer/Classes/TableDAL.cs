@@ -76,7 +76,7 @@ namespace TableTap.DataAccessLayer.Classes
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT * FROM tblTable WHERE tableID=" + id.ToString(),
+                    "SELECT * FROM tblTable WHERE roomID=" + id.ToString(),
                     conn))
                 {
                     SqlDataReader dr = command.ExecuteReader();

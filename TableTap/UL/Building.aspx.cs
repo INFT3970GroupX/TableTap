@@ -45,9 +45,10 @@ namespace TableTap.UL
         {
             RoomModel rm = new RoomModel();
 
-            rm = rooms.Where(r => r.RoomID == Int32.Parse(roomDropdown.Text)).FirstOrDefault(); //grabs single selected building
-
-            int id = rm.BuildingID;
+            rm = rooms.Where(b => b.RoomID == Int32.Parse(roomDropdown.Text)).FirstOrDefault(); //grabs single selected building
+                //NEEED TO FIX -- IT IS RETURNING 0 AND I HAVE NO IDEA WHY
+            
+            int id = rm.RoomID;
 
             string url = ConfigurationManager.AppSettings["UnsecurePath"] + "Room.aspx?id=" + id;
             Response.Redirect(url);

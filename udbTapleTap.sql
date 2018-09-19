@@ -95,12 +95,20 @@ go
 
 --Test values
 INSERT INTO tblBuilding(buildingName, buildingLabel, roomQty)
-VALUES ('Auchmuty Library', 'L', 2), ('Huxley Library', 'H', 1), ('ICT Building', 'ICT', 1)
+VALUES ('Auchmuty Library', 'L', 2), 
+('Huxley Library', 'H', 1), 
+('ICT Building', 'ICT', 1),
+('Beaus Basement', 'BB', 1),
+('Akerhus Festning', 'AF', 1)
 go
 
 INSERT INTO tblRoom(roomName, roomLabel, buildingID, openingTime, closingTime, tableQty)
 VALUES ('Auchmuty Information Common', 'L-266', 001, '00:00:00', '23:59:59', 100), 
-('Huxley Information Common Area', 'HA-157', 002, '08:00:00', '22:00:00', 140)
+('Huxley Information Common Area', 'HA-157', 002, '08:00:00', '22:00:00', 140),
+('Bedroom', 'Bed', 004, '08:00:00', '22:00:00', 2),
+('Bathroom', 'WC', 004, '08:00:00', '22:00:00', 2),
+('Både', 'b2', 005, '08:00:00', '22:00:00', 4),
+('Både', 'b1', 005, '08:00:00', '22:00:00', 4)
 go
 
 --INSERT INTO tblTable(tableQR, roomID, personCapacity, category, reservable)
@@ -111,7 +119,16 @@ INSERT INTO tblTable(roomID, personCapacity, category)
 VALUES ( 0001, 6, 'Large'), 
 (0001, 2, 'Small'),
 (0001, 6, 'Lounge'), 
-(0002, 1, 'Computer')
+(0002, 1, 'Computer'),
+(0003, 1, 'Computer1'),
+(0003, 1, 'Computer2'),
+(0003, 4, 'Lounge'),
+(0001, 6, 'Large'),
+(0001, 6, 'Large'),
+(0001, 6, 'Large'),
+(0001, 2, 'Small'),
+(0001, 2, 'Small'),
+(0001, 2, 'Small')
 go
 
 INSERT INTO tblUser(emailAddress, passcode, firstName, lastName, adminPermission)
@@ -262,4 +279,4 @@ END
 --go
 
 SELECT * FROM tblStatus;
-SELECT * FROM tblDates;
+SELECT COUNT(statusID) FROM tblStatus;

@@ -27,7 +27,7 @@ namespace TableTap.Models
 
         }
 
-        public TableModel(int tid, string tqr, int rid, int pca, string cat, bool avi, bool res)
+        public TableModel(int tid, /*string tqr,*/ int rid, int pca, string cat/*, bool avi, bool res*/)
         {
             this.TableID = tid;
             //this.TableQR = tqr;

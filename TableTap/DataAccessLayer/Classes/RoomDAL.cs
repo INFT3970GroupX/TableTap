@@ -29,7 +29,7 @@ namespace TableTap.DataAccessLayer.Classes
                     while (dr.Read())
                     {
                         room = new RoomModel();
-                        room.BuildingID = Convert.ToInt32(dr["roomID"]);
+                        room.RoomID = Convert.ToInt32(dr["roomID"]);
                         room.RoomName = dr["roomName"].ToString();
                         room.RoomLabel = dr["roomLabel"].ToString();
                         room.TableQty = Convert.ToInt32(dr["tableQty"]);

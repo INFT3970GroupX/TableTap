@@ -142,6 +142,7 @@
     <Content Include="UL\AdminEditUser.aspx" />
     <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
+    <Content Include="UL\AdminPrintQR.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Building.aspx" />
     <Content Include="UL\HaydenTestingPage.aspx" />
@@ -322,6 +323,13 @@
     </Compile>
     <Compile Include="UL\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminPrintQR.aspx.cs">
+      <DependentUpon>AdminPrintQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminPrintQR.aspx.designer.cs">
+      <DependentUpon>AdminPrintQR.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>
