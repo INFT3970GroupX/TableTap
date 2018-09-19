@@ -148,6 +148,7 @@
     <Content Include="UL\Login.aspx" />
     <Content Include="UL\Logout.aspx" />
     <Content Include="UL\Map.aspx" />
+    <Content Include="UL\MapTest.aspx" />
     <Content Include="UL\QRtest.aspx" />
     <Content Include="UL\Register.aspx" />
     <Content Include="UL\Room.aspx" />
@@ -362,6 +363,13 @@
     </Compile>
     <Compile Include="UL\Map.aspx.designer.cs">
       <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\MapTest.aspx.cs">
+      <DependentUpon>MapTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\MapTest.aspx.designer.cs">
+      <DependentUpon>MapTest.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\QRtest.aspx.cs">
       <DependentUpon>QRtest.aspx</DependentUpon>
