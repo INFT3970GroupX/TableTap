@@ -146,5 +146,113 @@ namespace TableTap.DataAccessLayer.Classes
 
             return sTest;
         }
+
+
+
+
+
+        /// <summary>
+        ///  For accessing table data, returns list full of table info
+        /// </summary>
+
+        public static List<string> LoadTable(string tableID)
+        {
+
+            List<string> tableRecord = new List<string>();
+
+
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+
+                using (SqlCommand command = new SqlCommand(
+                    "SELECT * FROM tblTable WHERE tableID=" + "'" + tableID + "'", conn))
+                {
+
+
+                    SqlDataReader dr = command.ExecuteReader();
+                    dr.Read();
+
+                    try
+                    {
+
+                        string roomID = dr["roomID"].ToString();
+                        string personCapacity = dr["personCapacity"].ToString();
+                        string category = dr["category"].ToString();
+
+                        tableRecord.Add(tableID);
+                        tableRecord.Add(roomID);
+                        tableRecord.Add(category);
+
+
+                        dr.Close();
+
+                        return tableRecord;
+                    }
+                    catch
+                    {
+                        tableRecord = null;
+
+                        return tableRecord;
+                    }
+                }
+
+                conn.Close();
+            }
+
+
+        }
+
+
+        /// <summary>
+        /// Modifys user record from associated tableID passed in
+        /// Uses list (tabledata) to store all data
+        /// </summary>
+        public static void modifyTable(List<string> tableData)
+        {
+            string tableID = tableData[0];
+            string roomID = tableData[1];
+            string personCapacity = tableData[2];
+            string category = tableData[3];
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlCommand modify = new SqlCommand();
+            SqlDataReader reader;
+            modify.CommandText = "UPDATE tblTable SET roomID=" + "'" + roomID + "', personCapacity=" + "'" + category + "' WHERE userID=" + "'" + tableID + "'";
+            modify.CommandType = System.Data.CommandType.Text;
+            modify.Connection = conn;
+            conn.Open();
+            reader = modify.ExecuteReader();
+
+            conn.Close();
+
+
+
+        }
+
+        /// <summary>
+        /// deletes user associated with userID
+        /// </summary>
+        public static void deleteTable(string tableID)
+        {
+            UserModel newUser = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+
+            using (conn)
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(
+                "DELETE FROM tblTable WHERE tableID=" + tableID, conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+
+        }
     }
 }

@@ -63,8 +63,9 @@ namespace TableTap.UL
         {
             List<string> record = new List<string>();
 
-            record.Add(lblLUserID.Text);
+            record.Add(lblUserID.Text);
             record.Add(Email.Value);
+            record.Add(inPassword.Value);
             record.Add(inFirstName.Value);
             record.Add(inLastName.Value);
 
@@ -78,7 +79,7 @@ namespace TableTap.UL
             }
 
             bool success = true;
-            UserDAL.modifyUser(record); //REMOVE
+            UserBL.PassInModifyString(record); //REMOVE
 
             if (success == false)
             {

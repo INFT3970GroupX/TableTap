@@ -136,6 +136,7 @@
     <Content Include="Seats.js" />
     <Content Include="UL\Account.aspx" />
     <Content Include="UL\AdminAddBuilding.aspx" />
+    <Content Include="UL\AdminAddTable.aspx" />
     <Content Include="UL\AdminAddUser.aspx" />
     <Content Include="UL\AdminEditUser.aspx" />
     <Content Include="UL\AdminError.aspx" />
@@ -278,6 +279,13 @@
     </Compile>
     <Compile Include="UL\AdminAddBuilding.aspx.designer.cs">
       <DependentUpon>AdminAddBuilding.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminAddTable.aspx.cs">
+      <DependentUpon>AdminAddTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminAddTable.aspx.designer.cs">
+      <DependentUpon>AdminAddTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\AdminAddUser.aspx.cs">
       <DependentUpon>AdminAddUser.aspx</DependentUpon>
