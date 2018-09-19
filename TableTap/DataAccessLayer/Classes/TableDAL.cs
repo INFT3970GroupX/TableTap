@@ -208,7 +208,7 @@ namespace TableTap.DataAccessLayer.Classes
 
 
         /// <summary>
-        /// Modifys user record from associated tableID passed in
+        /// Modifys table record from associated tableID passed in
         /// Uses list (tabledata) to store all data
         /// </summary>
         public static void modifyTable(List<string> tableData)

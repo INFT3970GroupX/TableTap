@@ -138,6 +138,7 @@
     <Content Include="UL\AdminAddBuilding.aspx" />
     <Content Include="UL\AdminAddTable.aspx" />
     <Content Include="UL\AdminAddUser.aspx" />
+    <Content Include="UL\AdminEditTable.aspx" />
     <Content Include="UL\AdminEditUser.aspx" />
     <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="UL\AdminAddUser.aspx.designer.cs">
       <DependentUpon>AdminAddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminEditTable.aspx.cs">
+      <DependentUpon>AdminEditTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminEditTable.aspx.designer.cs">
+      <DependentUpon>AdminEditTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\AdminEditUser.aspx.cs">
       <DependentUpon>AdminEditUser.aspx</DependentUpon>
