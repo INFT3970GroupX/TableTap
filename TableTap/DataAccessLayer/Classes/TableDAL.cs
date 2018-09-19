@@ -234,7 +234,7 @@ namespace TableTap.DataAccessLayer.Classes
         }
 
         /// <summary>
-        /// deletes user associated with userID
+        /// deletes table associated with tableID
         /// </summary>
         public static void deleteTable(string tableID)
         {
