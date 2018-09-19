@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TableTap.BusinessLayer.Classes;
 
+
 namespace TableTap.UL
 {
     public partial class Table : System.Web.UI.Page
@@ -20,10 +21,10 @@ namespace TableTap.UL
             //testButton1.Text = today.ToString("yyyy-MM-dd");
             //testButton1.Text = today.ToString("HH");
 
-            //testButton1.Text = TableBL.checkTableStatus(ID).ToString();
-            //need to run a check for current date in format (2018-01-01)
-            //need to run a check for the current hour and return in 24 hours (2digits)
-            //will check ID and date in DAL and pull the row from database to populate
+            testButton1.Text = TableBL.checkTableStatus(ID).ToString();
+            //need to create a drop down for available times for the rest of the day
+
+            //need to create a booking page, that lets the user select a date
         }
     }
 }

@@ -99,16 +99,19 @@ namespace TableTap.DataAccessLayer.Classes
             return tables;
         }
 
-        public static bool checkTableStatus(int id)
+        public static string checkTableStatus(int id)
         {
             bool hasData = false; //for testing purpuses
-            string sTest = "0";
-
+            string sTest = "default - this should not matter";
+            
 
             DateTime dateNow = DateTime.Now;
-            string hour = dateNow.ToString("HH");
-            //string date = dateNow.ToString("yyyy-MM-d");
-            string date = dateNow.ToString("dd-MM-yyyy");
+            //string hour = dateNow.ToString("HH");
+            string date = dateNow.ToString("yyyy-MM-d");
+            string dateYear = dateNow.ToString("yyyy");
+            string dateMonth = dateNow.ToString("MM");
+            string dateDay = dateNow.ToString("Day");
+            //string date = dateNow.ToString("dd/MM/yyyy");
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
 
             using (conn)
@@ -116,27 +119,32 @@ namespace TableTap.DataAccessLayer.Classes
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT " + hour + " FROM tblStatus WHERE tableID=" + "'" + id.ToString() + ", date=" + "'" + date + "'",
+                    "SELECT hour" + dateNow.ToString("HH").ToString() + " FROM tblStatus WHERE tableID=" + "'" + id.ToString() + "'" + " AND date=" + "'" + date + "'",
                     conn))
-                
+
+
                 {
                     SqlDataReader dr = command.ExecuteReader();
 
                     while (dr.Read())
                     {
-                        sTest = dr[dateNow.ToString("mm")].ToString();
+                        sTest = dr["hour"+dateNow.ToString("HH")].ToString();
                     }
                     dr.Close();
                 }
                 conn.Close();
             }
 
-            if (sTest != "0")
+            if (sTest == "")
             {
-                hasData = true;
+                sTest = "This table is availabile!";
+            }
+            else
+            {
+                sTest = "This table is Occupied";
             }
 
-            return hasData;
+            return sTest;
         }
     }
 }
