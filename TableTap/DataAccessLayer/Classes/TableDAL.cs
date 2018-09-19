@@ -182,9 +182,11 @@ namespace TableTap.DataAccessLayer.Classes
                         string roomID = dr["roomID"].ToString();
                         string personCapacity = dr["personCapacity"].ToString();
                         string category = dr["category"].ToString();
+                        
 
                         tableRecord.Add(tableID);
                         tableRecord.Add(roomID);
+                        tableRecord.Add(personCapacity);
                         tableRecord.Add(category);
 
 
@@ -221,7 +223,8 @@ namespace TableTap.DataAccessLayer.Classes
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             SqlCommand modify = new SqlCommand();
             SqlDataReader reader;
-            modify.CommandText = "UPDATE tblTable SET roomID=" + "'" + roomID + "', personCapacity=" + "'" + category + "' WHERE userID=" + "'" + tableID + "'";
+            modify.CommandText = "UPDATE tblTable SET roomID=" + "'" + roomID + "', personCapacity=" + "'" + personCapacity + "', category='" + category 
+                + "' WHERE tableID=" + "'" + tableID + "'";
             modify.CommandType = System.Data.CommandType.Text;
             modify.Connection = conn;
             conn.Open();
