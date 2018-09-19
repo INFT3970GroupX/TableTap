@@ -1,6 +1,9 @@
 --CANNOT DROP DATABASE PROPERLY
 use master
 go
+---Kills any existing DB sessions (Fixes drop issue) - HAYDEN: REMOVE IF YOUR DB BROKE
+ALTER DATABASE udbTableTap SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+GO
 
 IF EXISTS(select * from sys.databases where name='udbTableTap')
 DROP DATABASE udbTableTap
@@ -56,17 +59,17 @@ CREATE TABLE tblUser (
 	adminPermission	BIT NOT NULL DEFAULT 0
 	)
 
-CREATE TABLE tblReservation (
-	reservationID	INT IDENTITY(00001,1) PRIMARY KEY,
-	userID			INT NOT NULL,
-	tableID			INT NOT NULL,
-	reservationStartTime	DATETIME NOT NULL,
-	reservationFinishTime	DATETIME NOT NULL,
-	groupName				NVARCHAR(50) NOT NULL,
-
-	CONSTRAINT fk_ReserverID FOREIGN KEY (userID) REFERENCES tblUser(userID),
-	CONSTRAINT fk_ReservedTable FOREIGN KEY (tableID) REFERENCES tblTable(tableID)
-	)
+--CREATE TABLE tblReservation (
+--	reservationID	INT IDENTITY(00001,1) PRIMARY KEY,
+--	userID			INT NOT NULL,
+--	tableID			INT NOT NULL,
+--	reservationStartTime	DATETIME NOT NULL,
+--	reservationFinishTime	DATETIME NOT NULL,
+--	groupName				NVARCHAR(50) NOT NULL,
+--
+--	CONSTRAINT fk_ReserverID FOREIGN KEY (userID) REFERENCES tblUser(userID),
+--	CONSTRAINT fk_ReservedTable FOREIGN KEY (tableID) REFERENCES tblTable(tableID)
+--	)
 
 CREATE TABLE tblSession (
 	sessionID		INT IDENTITY(000000001, 1) PRIMARY KEY,
@@ -117,10 +120,10 @@ VALUES ('kepler@uon.edu.au', 'password1', 'Kepler', 'Manu', 0),
 ('michael@uon.edu.au', 'password3', 'Michael', NULL, 0)
 go
 
-INSERT INTO tblReservation(userID, tableID, reservationStartTime, reservationFinishTime, groupName)
-VALUES (100001, 1, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Keplers group, INFT3970'),
-(100003, 3, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Michaels group, INFT3960')
-go
+--INSERT INTO tblReservation(userID, tableID, reservationStartTime, reservationFinishTime, groupName)
+--VALUES (100001, 1, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Keplers group, INFT3970'),
+--(100003, 3, '2018-09-15 12:00:00', '2018-09-15 13:00:00', 'Michaels group, INFT3960')
+--go
 
 INSERT INTO tblSession(tableID, sessionStartTime, sessionFinishTime, sessionName)
 VALUES (2, '2018-09-16 12:00:00', '2018-09-16 15:20:02', 'Beau'), 
@@ -170,29 +173,29 @@ CREATE TABLE tblStatus
 	[statusID]		INT IDENTITY(0001,1) PRIMARY KEY,
 	[tableID]		INT,
 	[date]			DATE,
-	[00]			CHAR(50), 
-	[02]			CHAR,
-	[03]			CHAR,
-	[04]			CHAR,
-	[05]			CHAR,
-	[06]			CHAR,
-	[07]			CHAR,
-	[08]			CHAR,
-	[09]			CHAR,
-	[10]			CHAR,
-	[11]			CHAR,
-	[12]			CHAR,	
-	[13]			CHAR,
-	[14]			CHAR,
-	[15]			CHAR,
-	[16]			CHAR,
-	[17]			CHAR,
-	[18]			CHAR,
-	[19]			CHAR,
-	[20]			CHAR,
-	[21]			CHAR,
-	[22]			CHAR,
-	[23]			CHAR,
+	[hour00]			CHAR(50), 
+	[hour02]			CHAR,
+	[hour03]			CHAR,
+	[hour04]			CHAR,
+	[hour05]			CHAR,
+	[hour06]			CHAR,
+	[hour07]			CHAR,
+	[hour08]			CHAR,
+	[hour09]			CHAR,
+	[hour10]			CHAR,
+	[hour11]			CHAR,
+	[hour12]			CHAR,	
+	[hour13]			CHAR,
+	[hour14]			CHAR,
+	[hour15]			CHAR,
+	[hour16]			CHAR,
+	[hour17]			CHAR,
+	[hour18]			CHAR,
+	[hour19]			CHAR,
+	[hour20]			CHAR,
+	[hour21]			CHAR,
+	[hour22]			CHAR,
+	[hour23]			CHAR,
 
   CONSTRAINT fk_GETDATE FOREIGN KEY (date) REFERENCES tblDates(date),
   CONSTRAINT fk_GETTABLEID FOREIGN KEY (tableID) REFERENCES tblTable(tableID)

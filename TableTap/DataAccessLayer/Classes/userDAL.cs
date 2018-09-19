@@ -180,7 +180,7 @@ namespace TableTap.DataAccessLayer
         /// CREATED BY HAYDEN
         /// Takes input of email
         /// returns matching record as a list<string>
-        public static List<string> AdminUserEditCheck(string email)
+        public static List<string> EmailSearch(string email)
         {
 
             List<string> userRecord = new List<string>();
@@ -218,18 +218,90 @@ namespace TableTap.DataAccessLayer
                         userRecord.Add(user.FirstName);
                         userRecord.Add(user.LastName);
                         userRecord.Add(user.AdminPermission.ToString());
+
+                        dr.Close();
                     }
                     catch
                     {
                         userRecord = null;
                     }
                 }
+
+                conn.Close();
             }
            
 
 
 
             return userRecord;
+        }
+
+
+
+        /// <summary>
+        /// Modifys user record from associated email passed in
+        /// Uses list (userdata) to store all data
+        /// </summary>
+        public static void modifyUser(List<string> userdata)
+        {
+            string UserID = userdata[0];
+            string email = userdata[1];
+            string password = userdata[2];
+            string firstname = userdata[3];
+            string lastname = userdata[4];
+            string admin = userdata[5];
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlCommand modify = new SqlCommand();
+            SqlDataReader reader;
+            modify.CommandText = "UPDATE tblUser SET emailAddress=" + "'" + email + "', passcode=" + "'" + password + "', firstName=" + "'" + firstname 
+                + "', lastName=" + "'" + lastname + "', adminPermission=" + "'" + admin + "'" + "WHERE userID=" + "'" + UserID + "'";
+            modify.CommandType = System.Data.CommandType.Text;
+            modify.Connection = conn;
+            conn.Open();
+            reader = modify.ExecuteReader();
+
+            conn.Close();
+
+
+            
+        }
+
+
+
+        /// <summary>
+        /// deletes user associated with userID
+        /// </summary>
+        public static void deleteUser(int UserID)
+        {
+
+            /*
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            SqlCommand modify = new SqlCommand();
+            SqlDataReader reader;
+            modify.CommandText = "DELETE FROM tblUser " + "WHERE userID=" + "'" + UserID + "'";
+            modify.CommandType = System.Data.CommandType.Text;
+            modify.Connection = conn;
+            conn.Open();
+            reader = modify.ExecuteReader();
+
+            conn.Close();
+            */
+            UserModel newUser = new UserModel();
+
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            
+            using (conn)
+            {
+                conn.Open();
+                using (SqlCommand command = new SqlCommand(
+                "DELETE FROM tblUser WHERE userID=" + UserID.ToString(), conn))
+                {
+                    command.ExecuteNonQuery();
+                }
+                conn.Close();
+            }
+
         }
 
 

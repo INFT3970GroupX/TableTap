@@ -24,5 +24,10 @@ namespace TableTap.UL
         {
             Response.Redirect("AdminAddUser.aspx");
         }
+
+        protected void userButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminEditUser.aspx");
+        }
     }
 }

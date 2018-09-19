@@ -75,7 +75,7 @@ namespace TableTap.BusinessLayer
             List<String> listing = new List<string>();
             try
             {
-                listing = UserDAL.AdminUserEditCheck(email);
+                listing = UserDAL.EmailSearch(email);
 
                 if(listing == null)
                 {
@@ -92,6 +92,77 @@ namespace TableTap.BusinessLayer
             }
 
             return exists;
+        }
+
+
+        /// <summary>
+        /// passes list from fed from input (adminedituser) to ModifyUser class
+        /// </summary>
+        public static bool PassInModifyString(List<string> record)
+        {
+            bool success = false;
+            try
+            {
+                UserDAL.modifyUser(record);
+
+                success = true;
+                return success;
+
+            }
+            catch
+            {
+                return success;
+            }
+            
+        }
+
+
+        /// <summary>
+        /// Passes accesses data from data access layer
+        /// input a email
+        /// outputs list of user info associated with email
+        /// if no email found or in the event of a error returns null
+        /// </summary>
+        /// <param name="record"></param>
+        /// <returns></returns>
+        public static List<string> passUserSearch(string email)
+        {
+            List<string> record = new List<string>();
+            try
+            {
+
+               record = UserDAL.EmailSearch(email);
+            }
+            catch
+            {
+                record = null;
+            }
+
+            return record;
+
+        }
+
+
+        /// <summary>
+        /// accesses user delete function, if successful returns true else
+        /// returns false
+        /// </summary>
+        /// <param name="userID"></param>
+        /// <returns></returns>
+        public static void userDelete(int userID)
+        {
+
+            UserDAL.deleteUser(userID);
+            /*bool success;
+            try
+            {
+                
+                return success = true;
+            }
+            catch
+            {
+                return success = false;
+            }*/
         }
 
 
