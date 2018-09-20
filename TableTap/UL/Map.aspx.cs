@@ -20,6 +20,8 @@ namespace TableTap.UL
             
             
             buildings = BuildingBL.fillBuildingsList();
+           // Image1.ImageUrl = "~/Images/Room1.png";
+
 
             if (!IsPostBack) //need this to stop it reverting to the top value every button click
             {
@@ -27,6 +29,11 @@ namespace TableTap.UL
                 buildingDropdown.DataValueField = "BuildingID";
                 buildingDropdown.DataTextField = "BuildingName";
                 buildingDropdown.DataBind();
+                DropDownList1.DataSource = buildings;
+                DropDownList1.DataValueField = "BuildingID";
+                DropDownList1.DataTextField = "BuildingName";
+                DropDownList1.DataBind();
+               
             }
         }
 
@@ -49,5 +56,24 @@ namespace TableTap.UL
         {
 
         }
+
+        protected void buildingDropdown_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string str = DropDownList1.Text;
+            //Image1.ImageUrl = "~/Images/" + str + ".png";
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string str = DropDownList1.Text;
+            Image1.ImageUrl = "~/Images/" + str + ".png";
+            //if (str == "Newcastle City")
+            //{
+            //    Image1.ImageUrl = "~/Images/Room1.png";
+            //}
+
+        }
+
+
     }
 }

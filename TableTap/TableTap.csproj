@@ -118,9 +118,9 @@
     <Content Include="BusinessLayer\JavaScript\jscam.swf" />
     <Content Include="BusinessLayer\JavaScript\photo.js" />
     <Content Include="CSS\Map.css" />
-    <Content Include="Images\Room1.png" />
-    <Content Include="Images\Room2.png" />
-    <Content Include="Images\Room3.png" />
+    <Content Include="Images\Huxley Library.png" />
+    <Content Include="Images\Auchumty Library.png" />
+    <Content Include="Images\ICT Building.png" />
     <Content Include="NotificationModule\NotificationModuleandLogic.aspx" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\TableTap.csprojResolveAssemblyReference.cache" />
