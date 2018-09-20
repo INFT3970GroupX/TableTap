@@ -157,6 +157,9 @@
     <Content Include="UL\Room.aspx" />
     <Content Include="UL\Scan.aspx" />
     <Content Include="UL\Site.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -211,7 +214,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="UL\Table.aspx" />
-    <Content Include="UL\TesterHeaderPage.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -438,12 +441,12 @@
     <Compile Include="UL\Table.aspx.designer.cs">
       <DependentUpon>Table.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UL\TesterHeaderPage.aspx.cs">
-      <DependentUpon>TesterHeaderPage.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UL\TesterHeaderPage.aspx.designer.cs">
-      <DependentUpon>TesterHeaderPage.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -25,17 +25,17 @@ namespace TableTap.UL
 
         protected void test1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("HaydenTestingPage.aspx");
+            Response.Redirect("UL/HaydenTestingPage.aspx");
         }
 
         protected void test2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("BeauTestPage.aspx");
+            Response.Redirect("UL/BeauTestPage.aspx");
         }
 
         protected void test3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AdminHome.aspx");
+            Response.Redirect("UL/AdminHome.aspx");
         }
 
         protected void test4_Click(object sender, EventArgs e)
@@ -63,6 +63,11 @@ namespace TableTap.UL
             //QRImage.ImageUrl = "LastQRCodeCreated.png";
 
             QRCodeDecoder decoder = new QRCodeDecoder();
+        }
+
+        protected void test5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

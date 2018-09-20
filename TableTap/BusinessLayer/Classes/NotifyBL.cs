@@ -40,7 +40,7 @@ namespace TableTap.BusinessLayer.Classes
             // new Mail instance
             var eMail = new MimeMessage();
             // Specifies sending address
-            eMail.From.Add(new MailboxAddress("eTableTap", "eTableTap@GMail.com"));
+            eMail.From.Add(new MailboxAddress("", ""));
             // specifies target address
             eMail.To.Add(new MailboxAddress(fName + " " + sName, email));
             // email subject line
@@ -186,8 +186,8 @@ namespace TableTap.BusinessLayer.Classes
         {
             /// ------------------------------------------------------SUPPLIED BY TWILIO -------------------------- \\\
             // Account Information from Twilio account
-            const string accountSid = "ACb3c8b45d687f30b390eace020d89fe75";
-            const string authToken = "964f618c7094b7051e85fb65d13c676d";
+            const string accountSid = "";
+            const string authToken = "";
 
 
 
@@ -197,7 +197,7 @@ namespace TableTap.BusinessLayer.Classes
                 // contains message to be sent
                 body: message,
                 // Number supplied by Twilio account
-                from: new PhoneNumber("+61447465857"),
+                from: new PhoneNumber(""),
                 // Destination number
                 to: new PhoneNumber(phone)
             );

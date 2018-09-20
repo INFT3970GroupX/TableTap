@@ -13,6 +13,12 @@
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Button" />
             
         </div>
+         <p>
+            <input type="email" class="form-control" name="email" id="inEmail"  placeholder="Enter your Email" runat="server"/>
+            <input type="text" class="form-control" name="phone" id="phonenum"  placeholder="Enter your phonenumber" runat="server"/>
+      
+            <asp:Button ID="Button2" runat="server" Text="Button" OnClick="Button2_Click" />
+        </p>
     </form>
 </body>
 </html>

@@ -37,10 +37,10 @@ namespace TableTap.NotificationModule
         protected void Tester_Click(object sender, EventArgs e)
         {
             // if its here the methods need it for a input
-            string email = "hayden.bartlett1@hotmail.com";
-            string phone = "0434346773";
-            string fName = "Hayden";
-            string sName = "Bartlett";
+            string email = "haydfgtyhfhfg1@hotmail.com";
+            string phone = "";
+            string fName = "Hayjkjkl";
+            string sName = "Barthj";
             string tableID = "6604";
             string roomName = "testing room";
             NotifyBL.startAccountNotification(email, phone, fName, sName);
@@ -69,7 +69,7 @@ namespace TableTap.NotificationModule
             // new Mail instance
             var eMail = new MimeMessage();
             // Specifies sending address
-            eMail.From.Add(new MailboxAddress("eTableTap", "eTableTap@GMail.com"));
+            eMail.From.Add(new MailboxAddress("pw", "address"));
             // specifies target address
             eMail.To.Add(new MailboxAddress(fName + " " + sName, email));
             // email subject line
@@ -215,8 +215,8 @@ namespace TableTap.NotificationModule
         {
         /// ------------------------------------------------------SUPPLIED BY TWILIO -------------------------- \\\
         // Account Information from Twilio account
-        const string accountSid = "ACb3c8b45d687f30b390eace020d89fe75";
-        const string authToken = "964f618c7094b7051e85fb65d13c676d";
+        const string accountSid = "";
+        const string authToken = "";
 
 
 
