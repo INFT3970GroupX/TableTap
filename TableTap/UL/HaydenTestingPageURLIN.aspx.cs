@@ -5,6 +5,11 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using MessagingToolkit.QRCode.Codec;
+using MessagingToolkit.QRCode.Codec.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+
 
 namespace TableTap.UL
 {
@@ -30,12 +35,19 @@ namespace TableTap.UL
             Label1.Text = baseUrl;
 
 
-            // Gets public IP Address
-
-            Label4.Text = (new WebClient()).DownloadString("http://checkip.dyndns.org/");
 
 
 
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+
+
+            //Change to your own location if you want to store a copy-- not needed
+            ///          img.Save("C:\\Users\\kepst\\Desktop\\LastQRCodeCreated.png", ImageFormat.Png);
         }
     }
 }

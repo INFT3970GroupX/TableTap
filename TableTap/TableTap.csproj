@@ -211,6 +211,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="UL\Table.aspx" />
+    <Content Include="UL\TesterHeaderPage.aspx" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
@@ -436,6 +437,13 @@
     </Compile>
     <Compile Include="UL\Table.aspx.designer.cs">
       <DependentUpon>Table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\TesterHeaderPage.aspx.cs">
+      <DependentUpon>TesterHeaderPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\TesterHeaderPage.aspx.designer.cs">
+      <DependentUpon>TesterHeaderPage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
