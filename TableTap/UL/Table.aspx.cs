@@ -21,7 +21,7 @@ namespace TableTap.UL
             //testButton1.Text = today.ToString("yyyy-MM-dd");
             //testButton1.Text = today.ToString("HH");
 
-            testButton1.Text = TableBL.checkTableStatus(ID).ToString();
+            lblStatus.Text = TableBL.checkTableStatus(ID).ToString();
             //need to create a drop down for available times for the rest of the day
 
             //need to create a booking page, that lets the user select a date
