@@ -118,14 +118,5 @@ namespace TableTap.UL
             Response.Redirect("AdminHome.aspx");
         }
 
-        protected void myButton_Click(Object sender, EventArgs e)
-        {
-
-            UserModel deleteUser = new UserModel();
-
-            deleteUser.UserID = (Int32.Parse(lblUserID.Text));
-            UserBL.userDelete(deleteUser.UserID);
-            Response.Redirect("AdminHome.aspx");
-        }
     }
 }

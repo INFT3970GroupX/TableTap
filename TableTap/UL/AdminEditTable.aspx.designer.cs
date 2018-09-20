@@ -10,16 +10,16 @@
 namespace TableTap.UL {
     
     
-    public partial class AdminEditUser {
+    public partial class AdminEditTable {
         
         /// <summary>
-        /// txbUsername control.
+        /// inptable control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txbUsername;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inptable;
         
         /// <summary>
         /// lblStatus control.
@@ -40,22 +40,22 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.Button searchButton;
         
         /// <summary>
-        /// lblLUserID control.
+        /// lblLableTableID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLUserID;
+        protected global::System.Web.UI.WebControls.Label lblLableTableID;
         
         /// <summary>
-        /// lblUserID control.
+        /// lblTableID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUserID;
+        protected global::System.Web.UI.WebControls.Label lblTableID;
         
         /// <summary>
         /// Label1 control.
@@ -67,31 +67,31 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Email control.
+        /// INroomID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl Email;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText INroomID;
         
         /// <summary>
-        /// lbl control.
+        /// lblPersonCapacity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl;
+        protected global::System.Web.UI.WebControls.Label lblPersonCapacity;
         
         /// <summary>
-        /// inPassword control.
+        /// inpersonCapacity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inPassword;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inpersonCapacity;
         
         /// <summary>
         /// Label2 control.
@@ -103,49 +103,13 @@ namespace TableTap.UL {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// inFirstName control.
+        /// inCatagory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inFirstName;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// inLastName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inLastName;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// chkAdmin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkAdmin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inCatagory;
         
         /// <summary>
         /// saveButton control.

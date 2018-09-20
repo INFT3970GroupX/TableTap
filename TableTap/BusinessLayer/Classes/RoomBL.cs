@@ -11,11 +11,11 @@ namespace TableTap.BusinessLayer.Classes
     {
         public static List<RoomModel> fillRoomsList(int id)
         {
-            List<RoomModel> buildings = new List<RoomModel>();
+            List<RoomModel> rooms = new List<RoomModel>();
 
-            buildings = RoomDAL.loadRoomList(id);
+            rooms = RoomDAL.loadRoomList(id);
 
-            return buildings;
+            return rooms;
         }
     }
 }

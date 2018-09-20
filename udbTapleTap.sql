@@ -21,7 +21,7 @@ CREATE TABLE tblBuilding (
 	buildingLabel	NVARCHAR(10) NOT NULL,
 	buildingName	NVARCHAR(50) NOT NULL,
 	roomQty			SMALLINT NOT NULL,
-	buildingMap		IMAGE --temporarily Null since we haven't figured out how we're gonna make it interactive
+	--buildingMap		IMAGE --temporarily Null since we haven't figured out how we're gonna make it interactive
 	)
 
 CREATE TABLE tblRoom (
@@ -95,12 +95,21 @@ go
 
 --Test values
 INSERT INTO tblBuilding(buildingName, buildingLabel, roomQty)
-VALUES ('Auchmuty Library', 'L', 2), ('Huxley Library', 'H', 1), ('ICT Building', 'ICT', 1)
+VALUES ('Auchmuty Library', 'L', 2), 
+('Huxley Library', 'H', 1), 
+('ICT Building', 'ICT', 1),
+('Beaus Basement', 'BB', 1),
+('Akerhus Festning', 'AF', 1)
 go
 
 INSERT INTO tblRoom(roomName, roomLabel, buildingID, openingTime, closingTime, tableQty)
 VALUES ('Auchmuty Information Common', 'L-266', 001, '00:00:00', '23:59:59', 100), 
-('Huxley Information Common Area', 'HA-157', 002, '08:00:00', '22:00:00', 140)
+('Huxley Information Common Area', 'HA-157', 002, '08:00:00', '22:00:00', 140),
+('Bedroom', 'Bed', 004, '08:00:00', '22:00:00', 2),
+('Bathroom', 'WC', 004, '08:00:00', '22:00:00', 2),
+('Både', 'b2', 005, '08:00:00', '22:00:00', 4),
+('Både', 'b1', 005, '08:00:00', '22:00:00', 4),
+('Flower Room', 'FR', 001, '00:00:00', '23:59:59', 100)
 go
 
 --INSERT INTO tblTable(tableQR, roomID, personCapacity, category, reservable)
@@ -111,7 +120,16 @@ INSERT INTO tblTable(roomID, personCapacity, category)
 VALUES ( 0001, 6, 'Large'), 
 (0001, 2, 'Small'),
 (0001, 6, 'Lounge'), 
-(0002, 1, 'Computer')
+(0002, 1, 'Computer'),
+(0003, 1, 'Computer1'),
+(0003, 1, 'Computer2'),
+(0003, 4, 'Lounge'),
+(0001, 6, 'Large'),
+(0001, 6, 'Large'),
+(0001, 6, 'Large'),
+(0001, 2, 'Small'),
+(0001, 2, 'Small'),
+(0001, 2, 'Small')
 go
 
 INSERT INTO tblUser(emailAddress, passcode, firstName, lastName, adminPermission)
@@ -174,6 +192,7 @@ CREATE TABLE tblStatus
 	[tableID]		INT,
 	[date]			DATE,
 	[hour00]			CHAR(50), 
+	[hour01]			CHAR,
 	[hour02]			CHAR,
 	[hour03]			CHAR,
 	[hour04]			CHAR,
@@ -183,8 +202,8 @@ CREATE TABLE tblStatus
 	[hour08]			CHAR,
 	[hour09]			CHAR,
 	[hour10]			CHAR,
-	[hour11]			CHAR,
-	[hour12]			CHAR,	
+	[hour11]			CHAR,	
+	[hour12]			CHAR,
 	[hour13]			CHAR,
 	[hour14]			CHAR,
 	[hour15]			CHAR,
@@ -236,7 +255,7 @@ FROM
 --left JOIN tblStatus ts on (d.date = ts.date)
 --left JOIN tblStatus t on (ts.tableID = t.tableID)
 DECLARE @i int = 0
-WHILE @i < COL_LENGTH ( 'tblTable' , 'TableID')
+WHILE @i <= (SELECT Count(tableID) FROM  tblTable ) 
 BEGIN
 INSERT INTO tblStatus(tableID, date) 
 select t.TableID, d.date 
@@ -262,4 +281,5 @@ END
 --go
 
 SELECT * FROM tblStatus;
-SELECT * FROM tblDates;
+SELECT TableID FROM tblTable;
+SELECT COUNT (TableID) FROM tblTable;

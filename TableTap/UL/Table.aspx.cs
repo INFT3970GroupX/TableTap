@@ -25,6 +25,8 @@ namespace TableTap.UL
             //need to create a drop down for available times for the rest of the day
 
             //need to create a booking page, that lets the user select a date
+
+            //add user session to see who booked it.
         }
     }
 }

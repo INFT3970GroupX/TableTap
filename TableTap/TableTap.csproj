@@ -138,9 +138,11 @@
     <Content Include="UL\AdminAddBuilding.aspx" />
     <Content Include="UL\AdminAddTable.aspx" />
     <Content Include="UL\AdminAddUser.aspx" />
+    <Content Include="UL\AdminEditTable.aspx" />
     <Content Include="UL\AdminEditUser.aspx" />
     <Content Include="UL\AdminError.aspx" />
     <Content Include="UL\AdminHome.aspx" />
+    <Content Include="UL\AdminPrintQR.aspx" />
     <Content Include="UL\BeauTestPage.aspx" />
     <Content Include="UL\Building.aspx" />
     <Content Include="UL\HaydenTestingPage.aspx" />
@@ -295,6 +297,13 @@
     <Compile Include="UL\AdminAddUser.aspx.designer.cs">
       <DependentUpon>AdminAddUser.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UL\AdminEditTable.aspx.cs">
+      <DependentUpon>AdminEditTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminEditTable.aspx.designer.cs">
+      <DependentUpon>AdminEditTable.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UL\AdminEditUser.aspx.cs">
       <DependentUpon>AdminEditUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -315,6 +324,13 @@
     </Compile>
     <Compile Include="UL\AdminHome.aspx.designer.cs">
       <DependentUpon>AdminHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UL\AdminPrintQR.aspx.cs">
+      <DependentUpon>AdminPrintQR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UL\AdminPrintQR.aspx.designer.cs">
+      <DependentUpon>AdminPrintQR.aspx</DependentUpon>
     </Compile>
     <Compile Include="UL\BeauTestPage.aspx.cs">
       <DependentUpon>BeauTestPage.aspx</DependentUpon>

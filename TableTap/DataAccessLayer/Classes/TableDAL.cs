@@ -76,7 +76,7 @@ namespace TableTap.DataAccessLayer.Classes
                 conn.Open();
 
                 using (SqlCommand command = new SqlCommand(
-                    "SELECT * FROM tblTable WHERE tableID=" + id.ToString(),
+                    "SELECT * FROM tblTable WHERE roomID=" + id.ToString(),
                     conn))
                 {
                     SqlDataReader dr = command.ExecuteReader();
@@ -182,9 +182,11 @@ namespace TableTap.DataAccessLayer.Classes
                         string roomID = dr["roomID"].ToString();
                         string personCapacity = dr["personCapacity"].ToString();
                         string category = dr["category"].ToString();
+                        
 
                         tableRecord.Add(tableID);
                         tableRecord.Add(roomID);
+                        tableRecord.Add(personCapacity);
                         tableRecord.Add(category);
 
 
@@ -208,7 +210,7 @@ namespace TableTap.DataAccessLayer.Classes
 
 
         /// <summary>
-        /// Modifys user record from associated tableID passed in
+        /// Modifys table record from associated tableID passed in
         /// Uses list (tabledata) to store all data
         /// </summary>
         public static void modifyTable(List<string> tableData)
@@ -221,7 +223,8 @@ namespace TableTap.DataAccessLayer.Classes
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
             SqlCommand modify = new SqlCommand();
             SqlDataReader reader;
-            modify.CommandText = "UPDATE tblTable SET roomID=" + "'" + roomID + "', personCapacity=" + "'" + category + "' WHERE userID=" + "'" + tableID + "'";
+            modify.CommandText = "UPDATE tblTable SET roomID=" + "'" + roomID + "', personCapacity=" + "'" + personCapacity + "', category='" + category 
+                + "' WHERE tableID=" + "'" + tableID + "'";
             modify.CommandType = System.Data.CommandType.Text;
             modify.Connection = conn;
             conn.Open();
@@ -234,7 +237,7 @@ namespace TableTap.DataAccessLayer.Classes
         }
 
         /// <summary>
-        /// deletes user associated with userID
+        /// deletes table associated with tableID
         /// </summary>
         public static void deleteTable(string tableID)
         {

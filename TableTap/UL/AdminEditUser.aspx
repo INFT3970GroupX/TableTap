@@ -50,7 +50,6 @@
 
                     <asp:Button type="button" Text="Delete" class="btn btn-primary btn-lg btn-block login-button" ID="deleteButton2" onclick="deleteButton_Click" runat="server" />
                     <asp:Button type="button" Text="Cancel" class="btn btn-primary btn-lg btn-block login-button" ID="cancelButton" onclick="cancelButton_Click" runat="server" />
-                    <asp:Button type="button" Text="MyButton" class="btn btn-primary btn-lg btn-block login-button" ID="Button1" onclick="myButton_Click" runat="server" />
                      
                     </div>
                  </div>
