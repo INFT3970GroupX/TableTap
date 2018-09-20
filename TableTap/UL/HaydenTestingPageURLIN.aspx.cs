@@ -9,6 +9,7 @@ using MessagingToolkit.QRCode.Codec;
 using MessagingToolkit.QRCode.Codec.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using TableTap.BusinessLayer.Classes;
 
 
 namespace TableTap.UL
@@ -48,6 +49,12 @@ namespace TableTap.UL
 
             //Change to your own location if you want to store a copy-- not needed
             ///          img.Save("C:\\Users\\kepst\\Desktop\\LastQRCodeCreated.png", ImageFormat.Png);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            //     <add name="ConnectionString" providerName="System.Data.SqlClient" connectionString="Data Source=ORBIT1\SQLSERVER;Initial Catalog=udbTableTap;User ID=sa;Password=qwerty1" />
+
         }
     }
 }
