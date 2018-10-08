@@ -24,7 +24,7 @@ namespace TableTap.UL
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DBConn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
+            DBConn = ConfigurationManager.ConnectionStrings["udbTableTapConnectionString"].ConnectionString;
 
             if (!this.IsPostBack)
             {
